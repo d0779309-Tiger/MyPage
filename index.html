@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>個人網頁設定</title>
     <link rel="stylesheet" href="CSS (1)/20260127-2 (1).css">
+    <link rel="stylesheet" href="CSS (1)/bootstrap.css">
     <style>
         .section01{
             background-color:var(--color-1c) ;
@@ -68,122 +69,135 @@
             box-shadow: 2px 2px 2px 2px var(--blend-clay);
             font-size: 20px;
         }
-        .section02{
-            position: relative;
-            height: 1000px;
-            background-color: var(--contrast-taupe);
-        }
-        .section02 .box01{
-            position: absolute;
+        
+        .box05{
             width: 300px;
             height: 300px;
-            background-color: var(--contrast-jade);
-            border-radius: 1000px;
-            margin: 15px;
+            background-color: var( --color-6c);
             text-align: center;
-            line-height: 300px;
-            box-shadow: 5px 5px 5px 6px var(--color-5c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1000px;
+            box-shadow: 2px 2px 2px 2px var(--triple-forest);
+            margin: 10px;
+           
         }
-        .section02 .box01 a{
+        .box05 a{
             text-decoration: none;
             font-size: 63px;
             color: var(--blend-sand);
-            text-shadow: 2px 2px #0c0c0c;
+            text-shadow: 2px 2px var(--color-3c);
 
         }
-        .section02 .box02{
-            position: absolute;
-            left:18% ;
+        .box06{
             width: 300px;
             height: 300px;
-            background-color: var(--blend-sand);
-            border-radius: 1000px;
-            margin: 15px;
+            background-color: var(--blend-terracotta);
             text-align: center;
-            box-shadow: 5px 5px 5px 6px var(--color-5c);
-            line-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1000px;
+            box-shadow: 2px 2px 2px 2px var(--soft-pine);
+            margin: 10px;
         }
-       .section02 .box02 a{
+       .box06 a{
             text-decoration: none;
             font-size: 63px;
-            color: var(--mixed-bronze);
+            color: var(--color-1c);
             text-shadow: 2px 2px #0c0c0c;
 
        }
-       .section02 .box03{
-            position: absolute;
-            left: 36%;
-            width: 300px;
+       .box07{
+           width: 300px;
             height: 300px;
-            background-color: var(--blend-sunset);
-            border-radius: 1000px;
-            top: 0;
-            margin: 15px;
+            background-color: var( --mixed-gold);
             text-align: center;
-            box-shadow: 5px 5px 5px 6px var(--color-5c);
-            line-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1000px;
+            box-shadow: 2px 2px 2px 2px var(--color-3c);
+            margin: 10px;
        }
-       .section02 .box03 a{
+       .box07 a{
             text-decoration: none;
             font-size: 63px;
-            color: var(--color-4c);
-            text-shadow: 2px 2px #0c0c0c;
+            color: var( --color-6c);
+            text-shadow: 2px 2px var(--triple-dusk);
        }
-       .section02 .box04{
-            position: absolute;
+       .box08{
             width: 300px;
             height: 300px;
-            background-color: #d61a1a;
-            border-radius: 1000px;
-            top: 0;
-            right: 28%;
-            margin: 20px;
+            background-color: var( --soft-apricot);
             text-align: center;
-            line-height: 300px;
-            box-shadow: 5px 5px 5px 6px var(--color-5c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1000px;
+            box-shadow: 2px 2px 2px 2px var(--contrast-rust);
+            margin: 10px;
         }
-        .section02 .box04 a{
+        .box08 a{
+            text-decoration: none;
+            font-size: 63px;
+            color: var(--soft-cocoa);
+            text-shadow: 2px 2px #0c0c0c;
+        }
+        .box09{
+           width: 300px;
+            height: 300px;
+            background-color: var(--muted-denim);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1000px;
+            box-shadow: 2px 2px 2px 2px var(--triple-earth);
+            margin: 10px;
+        }
+        .box09 a{
             text-decoration: none;
             font-size: 63px;
             color: var(--blend-sand);
             text-shadow: 2px 2px #0c0c0c;
         }
-        .section02 .box05{
-            position: absolute;
-            width: 300px;
+        .box10{
+           width: 300px;
             height: 300px;
-            background-color: #80e20f;
-            border-radius: 1000px;
-            top: 0;
-            right: 8%;
-            margin: 20px;
+            background-color: var(--muted-brass);
             text-align: center;
-            line-height: 300px;
-            box-shadow: 5px 5px 5px 6px var(--color-4c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1000px;
+            box-shadow: 2px 2px 2px 2px var(--color-3c);
+            margin: 10px;
         }
-        .section02 .box05 a{
+        .box10 a{
             text-decoration: none;
             font-size: 63px;
-            color: var(--blend-sand);
+            color: var(--muted-denim);
             text-shadow: 2px 2px #0c0c0c;
         }
-        .section02 .box06{
-            position: absolute;
-            width: 300px;
+        .box11{
+           width: 300px;
             height: 300px;
-            background-color: #d6da1b;
-            border-radius: 1000px;
-            bottom: 30%;
-            margin: 15px;
+            background-color: var(--triple-meadow);
             text-align: center;
-            line-height: 300px;
-            box-shadow: 5px 5px 5px 6px var(--color-4c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1000px;
+            box-shadow: 2px 2px 2px 2px var( --contrast-rust);
+            margin: 10px;
         }
-        .section02 .box06 a{
+        .box11 a{
             text-decoration: none;
             font-size: 63px;
-            color: var(--blend-sand);
-            text-shadow: 2px 2px #0c0c0c;
+            color: var( --contrast-amber);
+            text-shadow: 2px 2px var( --triple-earth);
         }
     </style>
 </head>
@@ -200,26 +214,19 @@
             <h2>勤學負責</h2>
             <p>會運動，勤奮好學，負責任有禮貌，平常喜歡打羽球跟健身</p>
         </div>
-        <div class="section02">
-            <div class="box01">
-                <a href="20260129-1.html" target="_blank" class="fw-900">作品1</a>
-            </div>
-            <div class="box02">
-                <a href="20260203(ch1).html" class="fw-900" target="_blank">作品2</a>
-
-            </div>
-            <div class="box03">
-                <a href="20260203(ch3).html" class="fw-900" target="_blank">作品3</a>
-            </div>
-            <div class="box04">
-                <a href="20260205(ch5).html" class="fw-900" target="_blank">作品4</a>
-            </div>
-            <div class="box05">
-                <a href="20260205-youbike.html" class="fw-900" target="_blank">作品5</a>
-            </div>
-            <div class="box06">
-                <a href="20260210(ch6).html" class="fw-900" target="_blank">作品6</a>
-            </div>
+        
+        <div class="row row-cols-lg-3 row-cols-md-4 row-cols-sm-6 row-cols-xxl-3">
+            <div class="col-6 box05 fw-900"><a href="20260129-1.html" target="_blank" class="fw-900">作品1</a></div>
+            <div class="col-6 box06 fw-900"><a href="20260203(ch1).html" class="fw-900" target="_blank">作品2</a></div>
+            <div class="col-6 box07 fw-900"><a href="20260203(ch3).html" class="fw-900" target="_blank">作品3</a></div>
+            <div class="col-6 box08 fw-900"><a href="20260205(ch5).html" class="fw-900" target="_blank">作品4</a></div>
+            <div class="col-6 box09 fw-900"><a href="20260205-youbike.html" class="fw-900" target="_blank">作品5</a></div>
+            <div class="col-6 box10 fw-900"><a href="20260210(ch6).html" class="fw-900" target="_blank">作品6</a></div>
+            <div class="col-6 box11 fw-900"><a href="20260212-1.html">作品7</a></div>
         </div>
+        
+        
+
+        <script src="JS/bootstrap.bundle.js"></script>
 </body>
 </html>

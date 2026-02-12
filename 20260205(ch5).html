@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch5 表格</title>
+    <link rel="stylesheet" href="CSS (1)/bootstrap.css">
+    <link rel="stylesheet" href="CSS (1)/20260127-2 (1).css">
+    <style>
+        @media screen and (max-width:768px){
+            .table-rwd thead{
+                display: none;
+            }
+            .table-rwd tbody tr{
+                display: block;
+                border: 2px solid var(--blend-sand);
+                margin-top: 20px;
+            }
+            .table-rwd tbody tr td{
+                display: block;
+                overflow: hidden;
+            }
+            .table-rwd tbody tr td::before{
+                content: attr(data-th)" : ";
+                color: var(--color-3c);
+                font-size: 20px;
+                font-weight: 900;
+                display: block;
+                float: left;
+                width: 30%;
+                text-align: right; 
+                padding-right: 1.5em;               
+            }
+            .table-rwd tbody tr td span{
+               display: block;
+                float: left;
+                width: 70%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="title-01 text-center">表格</div>
+    
+    <table class="table table-rwd">
+        <thead class="table-warning">
+            <tr>
+                <th>歌手/團體</th>
+                <th>圖片</th>
+                <th>人數</th>
+                <th>男團/女團/個人</th>
+                <th>出道年數</th>
+                <th>歌曲</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-danger">
+                <td data-th="歌手/團體"><span>Gyubin</span></td>
+                <td data-th="圖片"><span><img src="images/GYUBIN_ (57).jpg" width=200px alt=""></span></td>
+                <td data-th="人數"><span>1</span></td>
+                <td data-th="男團/女團/個人"><span>個人歌手</span></td>
+                <td data-th="出道年數"><span>2年</span></td>
+                <td data-th="歌曲"><span>Satellite</span></td>
+            </tr>
+            <tr class="table bg-light">
+                <td data-th="歌手/團體"><span>Gyubin</span></td>
+                <td data-th="圖片"><span><img src="images/GYUBIN_ (57).jpg" width=200px alt=""></span></td>
+                <td data-th="人數"><span>1</span></td>
+                <td data-th="男團/女團/個人"><span>個人歌手</span></td>
+                <td data-th="出道年數"><span>2年</span></td>
+                <td data-th="歌曲"><span>Satellite</span></td>
+            </tr>
+            <tr class="table-info ">
+                <td data-th="歌手/團體"><span>YURI</span></td>
+                <td data-th="圖片"><span><img src="images/YURI_ (6).jpg" width=200px alt=""></span></td>
+                <td data-th="人數"><span>1</span></td>
+                <td data-th="男團/女團/個人"><span>團體/個人歌手</span></td>
+                <td data-th="出道年數"><span>18年/7年</span></td>
+                <td data-th="歌曲"><span>Ending Credit</span></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    </div>
+    <script src="JS/bootstrap.bundle.js"></script>
+</body>
+</html>

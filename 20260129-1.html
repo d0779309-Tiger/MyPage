@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML and CSSx練習</title>
+    <link rel="stylesheet" href="CSS (1)/20260127-1 (1).css">
+    <link rel="stylesheet" href="CSS (1)/20260127-2 (1).css">
+    <!-- style 是讓電腦知道是寫CSS -->
+    <style>
+        body{
+            background-color: var(--mycolor04);
+        }
+        .wrapper{
+            margin-bottom: 0;
+            margin-top: 0;
+            margin-left: auto;
+            margin-right: auto;
+            width: 1024px;
+            border-radius: 5px;
+
+        }
+        .wrapper .header img{
+            width: 100%;
+
+        }
+        nav{
+            background-color: var(--mycolor02);
+            text-align: center;
+            box-shadow: 2px 2px 2px 2px var(--mycolor08);
+            border-radius: 15px;
+
+
+        }
+        nav ul{
+            display: inline-block;
+        }
+        nav ul li{
+            
+            float: left;
+            list-style-type: none;
+        }
+        nav ul li a{
+            display: block;
+            background-color: var(--mycolor09);
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px 2px var(--mycolor07);
+            text-decoration: none;
+            padding-bottom: 15px;
+            padding-top: 15px;
+            padding-left: 30px;
+            padding-right: 30px;
+            color: var(--color-1c);
+            margin-right: 15px;
+            font-size: 20px;
+            text-align: center;
+            line-height: 15px;
+           
+        }
+        nav ul li a:hover{
+            background-color: var(--mixed-slate);
+            color: var(--mycolor01);
+            transform: scale(1.5);
+            transition: transform 0.3s;
+        }
+        .content{
+            background-color: var(--mycolor11);
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            font-size: 20px;
+            border-radius: 15px;
+            box-shadow: 3px 3px 3px 5px var(--mycolor06);
+            margin-top: 4px;
+            text-align: center;
+            line-height: 28px;
+            
+        }
+        .content h1{
+            color: var(--blend-clay);
+            
+        }
+        .content a{
+            color: var(--mycolor05);
+            display: block;
+            width: 110px;
+            height: 40px;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: var(--mycolor01);
+            text-align: center;
+            text-decoration: none;
+            line-height: 40px;
+            border-radius: 6px;
+            box-shadow: 1px 1px 3px 3px var(--mycolor09);
+
+        }
+        .content a:hover{
+                background-color: var(--mycolor05);
+                color: var(--mycolor01);
+                transform: scale(1.25);
+                transition: transform 0.3s;
+        }
+        .footer{
+            background-color: var(--mycolor03);
+            text-align: center;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 1px 0.5px var(--mycolor12);
+            margin-top: 2.45px;
+            font-size: 25px;
+        }
+        @media screen and (max-width: 1024px){
+            .wrapper{
+                width: 100%;
+            }
+            nav ul{
+                display: block;
+            }
+            nav ul li{
+                width: 100%;
+            }
+            .content p{
+                font-size: 12px;
+            }
+            .content h1{
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <img src="https://picsum.photos/id/666/1440/250" alt="">
+            <nav>
+                <ul>
+                    <li><a href="" class="fw-700">首頁</a></li>
+                    <li><a href="" class="fw-700">最新消息</a></li>
+                    <li><a href="" class="fw-700">合作店家</a></li>
+                    <li><a href="" class="fw-700">關於我們</a></li>
+                    <li><a href="" class="fw-700">聯絡我們</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content "><h1 class="title-2">內容介紹
+        </h1><p>喜愛士兵百姓等待多媒體敵人至今我就尋求右鍵股份，崗位抓住設為熱點授權普通組成航空漸漸列表徹底加快任何人，糖尿病世界上，下降擴大利益表演但我醫療地位尤其程式怎麼樣，大小分配全文一步皇帝命運獨特肯定無人從來沒顯得，電影音樂味道休閒覺得全面溫暖很多人故意，居民外掛任何節目只有畫面斗內位置交通服裝有效，高手劇情利潤在他西部簡歷完美什麼事日子類別因為兩個外掛負責，呵呵物流高考最近上了死了圖書館大家改善，之一民間國內外住了歡迎您後來，黑色心理新浪範圍素質離線眼中記錄，他們的堅持遺憾看到股份有限公司地區，日。</p>
+        <a href="" class="fw-900">了解詳情</a></div>
+        <div class="footer fw-700" >電話:0123456789 地址:中彰投勞動力發展署</div>
+    </div>
+</body>
+</html>

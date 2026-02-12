@@ -1,0 +1,113 @@
+ <!DOCTYPE html>
+ <html lang="zh-TW">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOUBIKE2.0</title>
+    <link rel="stylesheet" href="CSS (1)/bootstrap.css">
+    <link rel="stylesheet" href="CSS (1)/20260127-2 (1).css">
+    <link rel="stylesheet" href="CSS (1)/rwd.css">
+        <!-- <style>
+            @media screen and (max-width:768px){
+                .table-rwd thead{
+                    display: none;
+
+                }
+                .table-rwd tbody tr{
+                    display: block;
+                    border: 2px solid var(--soft-pine);
+                    margin-top: 15px;
+                }
+                .table-rwd tbody tr td{
+                    display: block;
+                    overflow: hidden;
+
+
+                }
+                .table-rwd tbody tr td::before{
+                    content: attr(data-td)" : ";
+                    color: var(--soft-honey);
+                    font-size: 12px;
+                    font-weight: 900;
+                    display: block;
+                    float: left;
+                    width: 30%;
+                    text-align: right;
+                    padding-right: 1.5em;
+                }
+                .table-rwd tbody tr td span{
+                    display: block;
+                    float: left;
+
+                }
+            }
+        </style> -->
+ </head>
+ <body>
+    <div class="container">
+        <div class="title-3 text-center">YOUBIKE</div>
+    <table class="table table-rwd">
+        <thead class="table-dark">
+            <tr>
+                <th>編號</th>
+                <th>站名</th>
+                <th>道路名稱</th>
+                <th>車位數量</th>
+                <th>可借數量</th>
+                <th>可還數量</th>
+                
+            </tr>
+        </thead>
+        <tbody id="bikebody">
+            <tr class="table-warning">
+                <td data-td=""><span></span></td>
+                <td data-td=""><span></span></td>
+                <td data-td=""><span></span></td>
+                <td data-td=""><span></span></td>
+                <td data-td=""><span></span></td>
+                <td data-td=""><span></span></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <script src="JS/bootstrap.bundle.js"></script>
+    <script src="JS/jquery-4.0.0.js"></script>
+    <script src="JS/youbike_immediate.json"></script>
+    <script>
+        $.ajax({
+            type:"GET",
+            url:"https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json",
+            dataType:"json",
+            success: showdata,
+            error:function(){
+                console.log("連線錯誤");
+            }
+
+
+
+
+        })
+        function showdata(data){
+            console.log(data)
+            $("#bikebody").empty();
+
+            data.forEach(function(item){
+
+
+                let bikHTML=`<tr class="table-warning">
+                <td data-td="編號"><span>${item.sno}</span></td>
+                <td data-td="站名"><span>${item.sna}</span></td>
+                <td data-td="道路名稱"><span>${item.ar}</span></td>
+                <td data-td="車位數量"><span>${item.Quantity}</span></td>
+                <td data-td="可借數量"><span>${item.available_rent_bikes}</span></td>
+                <td data-td="可還數量"><span>${item.available_return_bikes}</span></td>
+                
+            </tr>`
+
+
+                $("#bikebody").append(bikHTML)
+            });
+        }
+    </script>
+ </body>
+ </html>

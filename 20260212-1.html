@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch6. 地方美食列表</title>
+    <link rel="stylesheet" href="CSS (1)/bootstrap.css">
+    <link rel="stylesheet" href="CSS (1)/20260127-2 (1).css">
+    <style>
+        .adjust_box{
+            margin-top: 15px;
+            box-shadow: 2px 2px 4px 2px var(--blend-teal);
+            border-radius: 5px;
+        }
+        .box01{
+            margin:10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title-3 text-center">地方美食列表</div>
+    <div class="container ">
+        <div class="row" id="foodbody">
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="moving_l-1 adjust_box">
+                    <div class="moving_box"><button class="btn btn-danger">查看更多</button></div>
+                    <div class="h2 text-center fw-900">餐廳名稱</div>
+                    <div style="background-image: url(images/\(1\).jpg);height: 163px; background-position: center center;
+                background-size: cover; border-radius: 13px;margin: 10px;"></div>
+                    <div class="h3 text-center fw-900">簡介:</div>
+                    <p>周邊報名他還幾個，通知運輸網際，至今更。</p>
+                    <div class="h5 fw-700">電話:0123545669</div>
+                    <div class="h5 fw-700">地址:中彰投勞動力發展署</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="JS/bootstrap.bundle.js"></script>
+    <script src="JS/jquery-4.0.0.js"></script>
+    <script>
+        $(function(){
+            $.ajax({
+                type:"GET",
+                url:"JS/TravelFood.json",
+                dataType:"json",
+                success: showdata,
+                error:function(){
+                    console.log("error - JS/TravelFood.json");
+                }
+
+            });
+        });
+        function showdata(data){
+            console.log(data);
+            $('#foodbody').empty();
+            data.forEach(function(item){
+
+                // 資料防呆
+                let img = item.PicURL ? item.PicURL : "images/(1).jpg";
+                let name = item.Tel ? item.Tel : "未提供電話";
+                let hwords =item.HostWords ? item.HostWords.substring(0,30) : "未提簡介";
+
+
+                let strHTML =` <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="moving_l-1 adjust_box">
+                    <div class="moving_box"><button class="btn btn-danger">查看更多</button></div>
+                    <div class="h2 text-center fw-900">${item.Name}</div>
+                    <div style="background-image: url('${img}');height: 163px; background-position: center center;
+                background-size: cover; border-radius: 10px;margin: 10px;"></div>
+                    
+                    <div class="h3 text-center fw-900">簡介:</div>
+                    <div class="box01">
+                    <p>${hwords}</p>
+                    <div class="h5 fw-700 ">電話:${item.Tel}</div>
+                    <div class="h5 fw-700 ">地址:${item.City}${item.Town}${item.Adress}</div>
+                    </div>
+                </div>
+            </div>`;
+            $("#foodbody").append(strHTML);
+            });
+        }
+    </script>
+</body>
+
+</html>
