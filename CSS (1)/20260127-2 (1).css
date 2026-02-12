@@ -1,0 +1,548 @@
+/* 字型Google font */
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap'); */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap');
+
+body {
+    /* font-family: "Noto Sans TC", sans-serif; */
+
+    /* font-family: "Dela Gothic One", sans-serif; */
+
+    font-family: "Zen Maru Gothic", sans-serif;
+
+}
+
+
+
+:root {
+    --color-1c: #E4DACE;
+    --color-2c: #E5BB4B;
+    --color-3c: #D88E2F;
+    --color-4c: #498EAF;
+    --color-5c: #631F16;
+    --color-6c: #5EBB4B;
+    /* 暖調混色系 ⭐推薦 */
+    --blend-sunset: #DC9C3D;
+    /* #D88E2F + #E5BB4B 混合 */
+    --blend-terracotta: #A6563A;
+    /* #D88E2F + #631F16 混合 */
+    --blend-sage: #6FA757;
+    /* #5EBB4B + #498EAF 混合 */
+    --blend-sand: #E7C482;
+    /* #E4DACE + #E5BB4B 混合 */
+    --blend-clay: #937053;
+    /* #631F16 + #E4DACE 混合 */
+    --blend-teal: #579F7D;
+    /* #498EAF + #5EBB4B 混合 */
+    /* 深淺混調 */
+    --mixed-bronze: #8E5823;
+    /* #D88E2F + #631F16 混合 */
+    --mixed-olive: #6EA44D;
+    /* #5EBB4B + #631F16 混合 */
+    --mixed-slate: #5E8398;
+    /* #498EAF + #631F16 混合 */
+    --mixed-gold: #DFB456;
+    /* #E5BB4B + #D88E2F 混合 */
+    --mixed-mint: #74BB56;
+    /* #5EBB4B + #E5BB4B 混合 */
+    --mixed-ocean: #63A27D;
+    /* #498EAF + #5EBB4B 混合 */
+    /* 三色混調 */
+    --triple-autumn: #B28E40;
+    /* #D88E2F + #E5BB4B + #631F16 */
+    --triple-forest: #628E6D;
+    /* #5EBB4B + #498EAF + #631F16 */
+    --triple-sunset: #CD9C52;
+    /* #D88E2F + #E5BB4B + #E4DACE */
+    --triple-earth: #8B7152;
+    /* #631F16 + #D88E2F + #E4DACE */
+    --triple-meadow: #81A66F;
+    /* #5EBB4B + #E4DACE + #498EAF */
+    --triple-dusk: #7A7B6E;
+    /* #498EAF + #631F16 + #E4DACE */
+    /* 柔和混色 */
+    --soft-apricot: #E3AE6D;
+    /* #E5BB4B + #E4DACE + #D88E2F */
+    --soft-moss: #85B076;
+    /* #5EBB4B + #E4DACE 混合 */
+    --soft-storm: #7EA0A4;
+    /* #498EAF + #E4DACE 混合 */
+    --soft-cocoa: #946B5A;
+    /* #631F16 + #D88E2F + #E4DACE */
+    --soft-honey: #E8C179;
+    /* #E5BB4B + #E4DACE 混合 */
+    --soft-pine: #74A77D;
+    /* #5EBB4B + #498EAF + #E4DACE */
+    /* 對比混調 */
+    --contrast-rust: #AA6E32;
+    /* #D88E2F + #631F16 深度混合 */
+    --contrast-seafoam: #6DAA87;
+    /* #5EBB4B + #498EAF 均勻混合 */
+    --contrast-amber: #D5A045;
+    /* #E5BB4B + #D88E2F 混合 */
+    --contrast-taupe: #AE9380;
+    /* #631F16 + #E4DACE + #D88E2F */
+    --contrast-jade: #5CA96F;
+    /* #5EBB4B + #498EAF 偏綠 */
+    --contrast-camel: #C99A64;
+    /* #D88E2F + #E5BB4B + #E4DACE */
+    /* 灰調混色 */
+    --muted-copper: #A57D56;
+    /* #D88E2F + #631F16 + #498EAF */
+    --muted-olive: #7A9569;
+    /* #5EBB4B + #631F16 + #E4DACE */
+    --muted-steel: #748A8F;
+    /* #498EAF + #631F16 + #E4DACE */
+    --muted-brass: #B89C63;
+    /* #E5BB4B + #631F16 + #498EAF */
+    --muted-sage: #8DA27B;
+    /* #5EBB4B + #E4DACE + #631F16 */
+    --muted-denim: #6D8588;
+    /* #498EAF + #631F16 混合 */
+}
+
+/* 文字相關 */
+.fw-100 {
+    font-weight: 100;
+}
+
+.fw-200 {
+    font-weight: 200;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+
+.title-1 {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--blend-sand);
+}
+
+.title-2 {
+    font-size: 63px;
+    font-weight: 900;
+    color: var(--contrast-camel);
+    text-shadow:
+        2px 2px var(--color-5c),
+        10px 10px 6px var(--blend-terracotta);
+    letter-spacing: 15px;
+}
+
+.title-3 {
+    font-size: 61px;
+    font-weight: 900;
+    color: var(--blend-teal);
+    text-shadow: 2px 2px 2px var(--blend-sunset),
+        5px 5px 5px var(--blend-sage);
+}
+
+.title-4 {
+    font-size: 66px;
+    font-weight: 900;
+    color: var(--color-1c);
+    text-shadow: 2px 2px 10px var(--color-2c),
+        3px 7px 6px var(--color-4c);
+}
+
+.title-5 {
+    font-size: 31px;
+    font-weight: 900;
+    color: var(--blend-clay);
+}
+
+.title-6 {
+    font-size: 66px;
+    font-weight: 900;
+    color: var(--mixed-mint);
+}
+
+/* moving_l  moving_r  moving_t  moving_b */
+.moving_l {
+    position: relative;
+    overflow: hidden;
+}
+
+.moving_l .moving_box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(50deg, rgba(240, 114, 114, 0.6), rgba(243, 227, 3, 0.904));
+    left: -100%;
+    color: aquamarine;
+    display: flex;
+    /* 垂直置中 */
+    align-items: center;
+    /* 水平置中 */
+    justify-content: center;
+
+}
+
+
+.moving_l:hover .moving_box {
+    left: 0;
+    /* 慢慢出現，瞬間離開 */
+    transition: left 1s;
+}
+.moving_l-1 {
+    position: relative;
+    overflow: hidden;
+}
+
+.moving_l-1 .moving_box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(90deg,
+            rgba(255, 255, 255, 0.08) 0%,
+            transparent 3%,
+            transparent 97%,
+            rgba(255, 255, 255, 0.08) 100%
+        ),
+        radial-gradient(circle at 95% 50%, rgba(255, 105, 180, 0.18), transparent 60%),
+        radial-gradient(circle at 5% 50%, rgba(100, 149, 237, 0.18), transparent 60%),
+        radial-gradient(ellipse at center, rgba(138, 43, 226, 0.05), transparent 70%),
+        linear-gradient(90deg, 
+            rgba(15, 15, 35, 0.3) 0%, 
+            rgba(25, 25, 45, 0.2) 30%,
+            rgba(35, 35, 55, 0.15) 50%,
+            rgba(25, 25, 45, 0.2) 70%,
+            rgba(15, 15, 35, 0.3) 100%
+        );
+    left: -150%;
+    color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-shadow: 
+        -2px 0 15px rgba(100, 149, 237, 0.6),
+        2px 0 15px rgba(255, 105, 180, 0.6),
+        0 0 30px rgba(138, 43, 226, 0.4),
+        0 3px 6px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(22px) saturate(160%) brightness(1.05);
+    -webkit-backdrop-filter: blur(22px) saturate(160%) brightness(1.05);
+    border-left: 3px solid rgba(100, 149, 237, 0.4);
+    border-right: 1px solid rgba(255, 105, 180, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+        inset 3px 0 16px rgba(100, 149, 237, 0.2),
+        inset -3px 0 16px rgba(255, 105, 180, 0.15),
+        -8px 0 40px rgba(100, 149, 237, 0.2),
+        8px 0 40px rgba(255, 105, 180, 0.15);
+    overflow: hidden;
+}
+
+.moving_l-1 .moving_box::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+        rgba(100, 149, 237, 0.15) 0%,
+        transparent 50%,
+        rgba(255, 105, 180, 0.15) 100%
+    );
+    opacity: 0;
+    animation: pulse-horizontal 2s ease-in-out infinite;
+}
+
+@keyframes pulse-horizontal {
+    0%, 100% { opacity: 0; transform: scaleX(0.95); }
+    50% { opacity: 1; transform: scaleX(1); }
+}
+
+.moving_l-1:hover .moving_box {
+    left: 0;
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background: 
+        linear-gradient(90deg,
+            rgba(255, 255, 255, 0.12) 0%,
+            transparent 3%,
+            transparent 97%,
+            rgba(255, 255, 255, 0.12) 100%
+        ),
+        radial-gradient(circle at 95% 50%, rgba(255, 105, 180, 0.28), transparent 55%),
+        radial-gradient(circle at 5% 50%, rgba(100, 149, 237, 0.28), transparent 55%),
+        radial-gradient(ellipse at center, rgba(138, 43, 226, 0.08), transparent 65%),
+        linear-gradient(90deg, 
+            rgba(20, 20, 40, 0.4) 0%, 
+            rgba(30, 30, 50, 0.3) 30%,
+            rgba(40, 40, 60, 0.25) 50%,
+            rgba(30, 30, 50, 0.3) 70%,
+            rgba(20, 20, 40, 0.4) 100%
+        );
+    border-left: 3px solid rgba(100, 149, 237, 0.6);
+    border-right: 1px solid rgba(255, 105, 180, 0.3);
+    box-shadow: 
+        inset 4px 0 20px rgba(100, 149, 237, 0.3),
+        inset -4px 0 20px rgba(255, 105, 180, 0.25),
+        -12px 0 60px rgba(100, 149, 237, 0.3),
+        12px 0 60px rgba(255, 105, 180, 0.25),
+        0 0 100px rgba(138, 43, 226, 0.1);
+}
+
+
+.moving_r {
+    position: relative;
+    overflow: hidden;
+}
+
+.moving_r .moving_box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(50deg, rgba(240, 114, 114, 0.6), rgba(243, 227, 3, 0.904));
+    right: -100%;
+    color: aquamarine;
+    display: flex;
+    /* 垂直置中 */
+    align-items: center;
+    /* 水平置中 */
+    justify-content: center;
+    /* 慢慢出現和慢慢離開 */
+    transition: right 1s;
+
+}
+
+
+.moving_r:hover .moving_box {
+    right: 0;
+
+}
+
+.moving_t {
+    position: relative;
+    overflow: hidden;
+}
+
+.moving_t .moving_box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        conic-gradient(from 45deg at 30% 30%, 
+            rgba(138, 43, 226, 0.08) 0deg,
+            transparent 60deg,
+            rgba(255, 20, 147, 0.08) 120deg,
+            transparent 180deg,
+            rgba(0, 191, 255, 0.08) 240deg,
+            transparent 300deg,
+            rgba(138, 43, 226, 0.08) 360deg
+        ),
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.06), transparent 50%),
+        linear-gradient(160deg, 
+            rgba(0, 0, 0, 0.15) 0%, 
+            rgba(255, 255, 255, 0.04) 50%, 
+            rgba(0, 0, 0, 0.15) 100%
+        );
+    top: -100%;
+    color: rgba(255, 255, 255, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.95em;
+    text-shadow: 
+        0 0 20px rgba(138, 43, 226, 0.4),
+        0 0 40px rgba(0, 191, 255, 0.3),
+        0 2px 4px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px) saturate(150%) contrast(120%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%) contrast(120%);
+    border: 2px solid transparent;
+    border-image: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.3), 
+        rgba(255, 255, 255, 0.05),
+        rgba(138, 43, 226, 0.2)
+    ) 1;
+    box-shadow: 
+        inset 2px 2px 8px rgba(255, 255, 255, 0.15),
+        inset -2px -2px 8px rgba(0, 0, 0, 0.2),
+        0 8px 32px rgba(138, 43, 226, 0.15);
+    overflow: hidden;
+}
+
+.moving_t .moving_box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, 
+        transparent 30%, 
+        rgba(255, 255, 255, 0.03) 50%, 
+        transparent 70%
+    );
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.moving_t:hover .moving_box {
+    top: 0;
+    transition: all 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+    background: 
+        conic-gradient(from 45deg at 30% 30%, 
+            rgba(138, 43, 226, 0.15) 0deg,
+            transparent 60deg,
+            rgba(255, 20, 147, 0.15) 120deg,
+            transparent 180deg,
+            rgba(0, 191, 255, 0.15) 240deg,
+            transparent 300deg,
+            rgba(138, 43, 226, 0.15) 360deg
+        ),
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.12), transparent 50%),
+        linear-gradient(160deg, 
+            rgba(0, 0, 0, 0.2) 0%, 
+            rgba(255, 255, 255, 0.08) 50%, 
+            rgba(0, 0, 0, 0.2) 100%
+        );
+    border-image: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.5), 
+        rgba(138, 43, 226, 0.3),
+        rgba(0, 191, 255, 0.3)
+    ) 1;
+    box-shadow: 
+        inset 2px 2px 12px rgba(255, 255, 255, 0.25),
+        inset -2px -2px 12px rgba(0, 0, 0, 0.3),
+        0 16px 48px rgba(138, 43, 226, 0.25),
+        0 0 80px rgba(0, 191, 255, 0.15);
+    transform: scale(1.005);
+}
+
+.moving_b {
+    position: relative;
+    overflow: hidden;
+}
+
+.moving_b .moving_box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        repeating-linear-gradient(
+            -45deg,
+            rgba(255, 255, 255, 0.02) 0px,
+            rgba(255, 255, 255, 0.02) 2px,
+            transparent 2px,
+            transparent 4px
+        ),
+        radial-gradient(ellipse at 15% 85%, rgba(50, 205, 50, 0.15), transparent 55%),
+        radial-gradient(ellipse at 85% 15%, rgba(255, 140, 0, 0.15), transparent 55%),
+        linear-gradient(20deg, 
+            rgba(10, 10, 30, 0.25) 0%, 
+            rgba(30, 30, 60, 0.15) 50%, 
+            rgba(10, 10, 30, 0.25) 100%
+        );
+    bottom: -100%;
+    color: rgba(255, 255, 255, 0.88);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-shadow: 
+        0 0 30px rgba(50, 205, 50, 0.5),
+        0 0 60px rgba(255, 140, 0, 0.3),
+        0 4px 8px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(18px) saturate(180%) hue-rotate(10deg);
+    -webkit-backdrop-filter: blur(18px) saturate(180%) hue-rotate(10deg);
+    border: 1.5px solid rgba(255, 255, 255, 0.12);
+    border-radius: 2px;
+    box-shadow: 
+        inset -3px -3px 12px rgba(50, 205, 50, 0.08),
+        inset 3px 3px 12px rgba(255, 140, 0, 0.08),
+        0 12px 48px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    overflow: hidden;
+}
+
+.moving_b .moving_box::after {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(50, 205, 50, 0.6) 20%,
+        rgba(255, 140, 0, 0.6) 50%,
+        rgba(50, 205, 50, 0.6) 80%,
+        transparent 100%
+    );
+    bottom: 0;
+    left: -25%;
+    animation: scan-line 2.5s ease-in-out infinite;
+    filter: blur(1px);
+}
+
+@keyframes scan-line {
+    0%, 100% { transform: translateY(0); opacity: 0; }
+    10% { opacity: 1; }
+    50% { transform: translateY(-100%); opacity: 0.8; }
+    90% { opacity: 1; }
+}
+
+.moving_b:hover .moving_box {
+    bottom: 0;
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    background: 
+        repeating-linear-gradient(
+            -45deg,
+            rgba(255, 255, 255, 0.03) 0px,
+            rgba(255, 255, 255, 0.03) 2px,
+            transparent 2px,
+            transparent 4px
+        ),
+        radial-gradient(ellipse at 15% 85%, rgba(50, 205, 50, 0.25), transparent 50%),
+        radial-gradient(ellipse at 85% 15%, rgba(255, 140, 0, 0.25), transparent 50%),
+        linear-gradient(20deg, 
+            rgba(20, 20, 40, 0.35) 0%, 
+            rgba(40, 40, 70, 0.25) 50%, 
+            rgba(20, 20, 40, 0.35) 100%
+        );
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        inset -4px -4px 16px rgba(50, 205, 50, 0.12),
+        inset 4px 4px 16px rgba(255, 140, 0, 0.12),
+        0 20px 64px rgba(0, 0, 0, 0.35),
+        0 0 100px rgba(50, 205, 50, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+}

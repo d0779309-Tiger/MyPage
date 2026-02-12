@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人網頁設定</title>
+    <link rel="stylesheet" href="CSS (1)/20260127-2 (1).css">
+    <style>
+        .section01{
+            background-color:var(--color-1c) ;
+            height: 100vh;
+            position: relative;
+        }
+        .box01{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: var(--color-5c);
+        }
+        .box02{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: var(--color-5c);
+
+        }
+        .box03{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: var(--color-5c);
+        }
+
+        .box04{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: var(--color-5c);
+        }
+        .userimg{
+            position: absolute;
+            top: 100px;
+            bottom: 100px;
+            left: 100px;
+            right: 100px;
+            background-color: var(--color-3c);
+            background-image: url(images/\(1\).jpg);
+            background-size: cover;
+            background-position: 0 0;
+        }
+        .usertext{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);background-color: rgba(0, 0, 0, 0.5);
+            color: var(--blend-sand);
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 2px 2px 2px 2px var(--blend-clay);
+            font-size: 20px;
+        }
+        .section02{
+            position: relative;
+            height: 1000px;
+            background-color: var(--contrast-taupe);
+        }
+        .section02 .box01{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-color: var(--contrast-jade);
+            border-radius: 1000px;
+            margin: 15px;
+            text-align: center;
+            line-height: 300px;
+            box-shadow: 5px 5px 5px 6px var(--color-5c);
+        }
+        .section02 .box01 a{
+            text-decoration: none;
+            font-size: 63px;
+            color: var(--blend-sand);
+            text-shadow: 2px 2px #0c0c0c;
+
+        }
+        .section02 .box02{
+            position: absolute;
+            left:18% ;
+            width: 300px;
+            height: 300px;
+            background-color: var(--blend-sand);
+            border-radius: 1000px;
+            margin: 15px;
+            text-align: center;
+            box-shadow: 5px 5px 5px 6px var(--color-5c);
+            line-height: 300px;
+        }
+       .section02 .box02 a{
+            text-decoration: none;
+            font-size: 63px;
+            color: var(--mixed-bronze);
+            text-shadow: 2px 2px #0c0c0c;
+
+       }
+       .section02 .box03{
+            position: absolute;
+            left: 36%;
+            width: 300px;
+            height: 300px;
+            background-color: var(--blend-sunset);
+            border-radius: 1000px;
+            top: 0;
+            margin: 15px;
+            text-align: center;
+            box-shadow: 5px 5px 5px 6px var(--color-5c);
+            line-height: 300px;
+       }
+       .section02 .box03 a{
+            text-decoration: none;
+            font-size: 63px;
+            color: var(--color-4c);
+            text-shadow: 2px 2px #0c0c0c;
+       }
+       .section02 .box04{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-color: #d61a1a;
+            border-radius: 1000px;
+            top: 0;
+            right: 28%;
+            margin: 20px;
+            text-align: center;
+            line-height: 300px;
+            box-shadow: 5px 5px 5px 6px var(--color-5c);
+        }
+        .section02 .box04 a{
+            text-decoration: none;
+            font-size: 63px;
+            color: var(--blend-sand);
+            text-shadow: 2px 2px #0c0c0c;
+        }
+        .section02 .box05{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-color: #80e20f;
+            border-radius: 1000px;
+            top: 0;
+            right: 8%;
+            margin: 20px;
+            text-align: center;
+            line-height: 300px;
+            box-shadow: 5px 5px 5px 6px var(--color-4c);
+        }
+        .section02 .box05 a{
+            text-decoration: none;
+            font-size: 63px;
+            color: var(--blend-sand);
+            text-shadow: 2px 2px #0c0c0c;
+        }
+        .section02 .box06{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-color: #d6da1b;
+            border-radius: 1000px;
+            bottom: 30%;
+            margin: 15px;
+            text-align: center;
+            line-height: 300px;
+            box-shadow: 5px 5px 5px 6px var(--color-4c);
+        }
+        .section02 .box06 a{
+            text-decoration: none;
+            font-size: 63px;
+            color: var(--blend-sand);
+            text-shadow: 2px 2px #0c0c0c;
+        }
+    </style>
+</head>
+<body>
+    <div class="section01"></div>
+        <div class="box01"></div>
+        <div class="box02"></div>
+        <div class="box03"></div>
+        <div class="box04"></div>
+        <div class="userimg"></div>
+        <div class="usertext">
+            <h1>XXX</h1>
+            <hr>
+            <h2>勤學負責</h2>
+            <p>會運動，勤奮好學，負責任有禮貌，平常喜歡打羽球跟健身</p>
+        </div>
+        <div class="section02">
+            <div class="box01">
+                <a href="20260129-1.html" target="_blank" class="fw-900">作品1</a>
+            </div>
+            <div class="box02">
+                <a href="20260203(ch1).html" class="fw-900" target="_blank">作品2</a>
+
+            </div>
+            <div class="box03">
+                <a href="20260203(ch3).html" class="fw-900" target="_blank">作品3</a>
+            </div>
+            <div class="box04">
+                <a href="20260205(ch5).html" class="fw-900" target="_blank">作品4</a>
+            </div>
+            <div class="box05">
+                <a href="20260205-youbike.html" class="fw-900" target="_blank">作品5</a>
+            </div>
+            <div class="box06">
+                <a href="20260210(ch6).html" class="fw-900" target="_blank">作品6</a>
+            </div>
+        </div>
+</body>
+</html>
