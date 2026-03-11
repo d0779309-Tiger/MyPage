@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習</title>
+    <link rel="stylesheet" href="CSS (1)/bootstrap.css">
+    <link rel="stylesheet" href="CSS (1)/20260127-2 (1).css">
+    <style>
+        .bg-cover {
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .bb {
+            text-align: center;
+            line-height: 800px;
+            font-weight: 900;
+        }
+        .bb a{
+            text-decoration: none;
+            color: #ffffff;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 15px 40px;
+            border-radius: 50px;
+            transition: all 0.4s;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadaInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .moving_t {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .moving_t .moving_box {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background:
+                conic-gradient(from 45deg at 30% 30%,
+                    rgba(138, 43, 226, 0.08) 0deg,
+                    transparent 60deg,
+                    rgba(255, 20, 147, 0.08) 120deg,
+                    transparent 180deg,
+                    rgba(0, 191, 255, 0.08) 240deg,
+                    transparent 300deg,
+                    rgba(138, 43, 226, 0.08) 360deg),
+                radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.06), transparent 50%),
+                linear-gradient(160deg,
+                    rgba(0, 0, 0, 0.15) 0%,
+                    rgba(255, 255, 255, 0.04) 50%,
+                    rgba(0, 0, 0, 0.15) 100%);
+            top: -100%;
+            color: rgba(255, 255, 255, 0.92);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 300;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: 0.95em;
+            text-shadow:
+                0 0 20px rgba(138, 43, 226, 0.4),
+                0 0 40px rgba(0, 191, 255, 0.3),
+                0 2px 4px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(20px) saturate(150%) contrast(120%);
+            -webkit-backdrop-filter: blur(20px) saturate(150%) contrast(120%);
+            border: 2px solid transparent;
+            border-image: linear-gradient(135deg,
+                    rgba(255, 255, 255, 0.3),
+                    rgba(255, 255, 255, 0.05),
+                    rgba(138, 43, 226, 0.2)) 1;
+            box-shadow:
+                inset 2px 2px 8px rgba(255, 255, 255, 0.15),
+                inset -2px -2px 8px rgba(0, 0, 0, 0.2),
+                0 8px 32px rgba(138, 43, 226, 0.15);
+            overflow: hidden;
+        }
+
+        .moving_t .moving_box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg,
+                    transparent 30%,
+                    rgba(255, 255, 255, 0.03) 50%,
+                    transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- 導覽列 -->
+        <div class="bg-info p-3 mb-3 rounded-3 shadow-sm">
+            <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
+                <!-- 左邊的相關文字介紹 -->
+                <div>
+                    <div class="h4 fw-700">演唱會</div>
+                    <div class="small text-bg-info">演唱會 | 場地租借 | 活動展演 | 親子活動</div>
+                </div>
+                <!-- 右邊的相關按鈕選單 -->
+                <div>
+                    <a href="" class="btn btn-outline-warning">注意事項</a>
+                    <a href="" class="btn btn-outline-warning">會場須知</a>
+                    <a href="" class="btn btn-outline-warning">座位圖表</a>
+                    <a href="" class="btn btn-warning">立即購票</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 moving_t bg-cover" style="background-image: url(images/\(1\).jpg);height: 300px;">
+                <div class="moving_box h1">您好</div>
+            </div>
+            <div class="col-md-4 bg-cover" style="background-image: url(images/GYUBIN_\ \(56\).jpg);height: 300px;">
+            </div>
+            <div class="col-md-4 moving_t bg-cover"
+                style="background-image: url(images/GYUBIN_\ \(64\).jpg);height: 300px;">
+                <div class="moving_box h1">您好</div>
+            </div>
+        </div>
+        <div class="row vh-100">
+            <div class="col-md-3 mt-2">
+                <div class="d-flex flex-column h-100 row">
+                    <div class="h-50 bg-cover" style="background-image: url(images/GYUBIN_\ \(60\).jpg);"></div>
+                    <div class="h-50 bg-cover" style="background-image: url(images/GYUBIN_\ \(73\).jpg);"></div>
+                </div>
+            </div>
+            <div class="col-6 mt-2 moving_t bg-cover justify-content-center align-items-center"
+                style="background-image: url(images/GYUBIN_\ \(73\).jpg);">
+                <div class="moving_box h1">您好</div>
+            </div>
+
+            <div class="col-md-3 mt-2">
+                <div class="d-flex flex-column h-100 row">
+                    <div class="h-50 bg-cover " style="background-image: url(images/GYUBIN_\ \(60\).jpg);"></div>
+                    <div class="h-50 bg-cover" style="background-image: url(images/GYUBIN_\ \(73\).jpg);"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row mt-2" style="height: 800px;">
+            <div class="col-3 bg-cover " style="background-image: url(images/\(1\).jpg);">
+                <div class="bb"><a href="">功能1</a></div>
+            </div>
+            <div class="col-3 bg-cover " style="background-image: url(images/\(2\).jpg);">
+                <div class="bb"><a href="">功能2</a></div>
+            </div>
+            <div class="col-3 bg-cover " style="background-image: url(images/GYUBIN_\ \(73\).jpg);">
+                <div class="bb"><a href="">功能3</a></div>
+            </div>
+            <div class="col-3 bg-cover " style="background-image: url(images/GYUBIN_\ \(84\).jpg);">
+                <div class="bb"><a href="">功能4</a></div>
+            </div>
+        </div>
+    </div>
+    <script src="JS/bootstrap.bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch7. Flex & ch8. Spacing</title>
+    <link rel="stylesheet" href="CSS (1)/bootstrap.css">
+    <link rel="stylesheet" href="CSS (1)/20260127-2 (1).css">
+    <style>
+        body{
+            background-color:rgb(124, 160, 238) ;
+        }
+        .box01{
+            height: 136px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="title-4 text-center">ch7. Flex & ch8. Spacing</div>
+        <div class="title-2">1.flex-row</div>
+        <!-- d-flex 先定義再 flex-row -->
+        <div class="row d-flex flex-row">
+            <div class="col-3">
+                <div class="box01 bg-primary">
+                    <div class="display-1 text-center">1</div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-primary">
+                    <div class="display-1 text-center">2</div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-primary">
+                    <div class="display-1 text-center">3</div>
+                </div>
+            </div>
+        </div>
+        <div class="title-2">2.flex-row-reverse</div>
+        <div class="row d-flex flex-md-row-reverse">
+            <div class="col-3">
+                <div class="box01 bg-primary"><div class="display-1 text-center">1</div></div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-primary"><div class="display-1 text-center">2</div></div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-primary"><div class="display-1 text-center">3</div></div>
+            </div>
+        </div>
+        
+        <div class="title-2">3.flex-column</div>
+        <div class="row d-flex flex-column">
+            <div class="col-3">
+                <div class="box01 bg-primary"><div class="display-1 text-center">1</div></div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-primary"><div class="display-1 text-center">2</div></div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-primary"><div class="display-1 text-center">3</div></div>
+            </div>
+        </div>
+        <div class="title-2">4.flex-column-reverse</div>
+        <div class="row d-flex flex-xl-column-reverse">
+            <div class="col-3">
+                <div class="box01 bg-primary"><div class="display-1 text-center">1</div></div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-primary"><div class="display-1 text-center">2</div></div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-primary"><div class="display-1 text-center">3</div></div>
+            </div>
+        </div>
+        <div class="title-2">5.justify-content-star</div>
+        <div class="row justify-content-star">
+            <div class="col-3">
+                <div class="box01 bg-warning">
+                    <div class="display-1 text-center">1</div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-warning">
+                    <div class="display-1 text-center">2</div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-warning">
+                    <div class="display-1 text-center">3</div>
+                </div>
+            </div>
+        </div>
+        <div class="title-2">6.justify-content-center</div>
+        <div class="row justify-content-center">
+            <div class="col-3">
+                <div class="box01 bg-warning">
+                    <div class="display-1 text-center">1</div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-warning">
+                    <div class="display-1 text-center">2</div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-warning">
+                    <div class="display-1 text-center">3</div>
+                </div>
+            </div>
+        </div>
+        <div class="title-2">7.justify-content-end</div>
+        <div class="row justify-content-lg-end">
+            <div class="col-3">
+                <div class="box01 bg-warning">
+                    <div class="display-1 text-center">1</div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-warning">
+                    <div class="display-1 text-center">2</div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-warning">
+                    <div class="display-1 text-center">3</div>
+                </div>
+            </div>
+        </div>
+        <div class="title-2">8.justify-content-around</div>
+        <div class="row justify-content-around">
+            <div class="col-3">
+                <div class="box01 bg-warning">
+                    <div class="display-1 text-center">1</div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-warning">
+                    <div class="display-1 text-center">2</div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-warning">
+                    <div class="display-1 text-center">3</div>
+                </div>
+            </div>
+        </div>
+        <div class="title-2">9.justify-content-between</div>
+        <div class="row justify-content-xl-between">
+            <div class="col-3">
+                <div class="box01 bg-warning">
+                    <div class="display-1 text-center">1</div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-warning">
+                    <div class="display-1 text-center">2</div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-warning">
+                    <div class="display-1 text-center">3</div>
+                </div>
+            </div>
+        </div>
+        <div class="title-4">10.align-items-?? , align-self-??</div>
+        <div class="row flex-column align-items-md-center">
+            <div class="col-3">
+                <div class="box01 bg-warning">
+                    <div class="display-1 text-center">1</div>
+                </div>
+            </div>
+            <div class="col-3 align-self-xxl-start">
+                <div class="box01 bg-warning">
+                    <div class="display-1 text-center">2</div>
+                </div>
+            </div>
+            <div class="col-3 align-self-xl-end">
+                <div class="box01 bg-warning">
+                    <div class="display-1 text-center">3</div>
+                </div>
+            </div>
+            <div class="col-3 align-self-lg-start">
+                <div class="box01 bg-warning">
+                    <div class="display-1 text-center">4</div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-warning">
+                    <div class="display-1 text-center">5</div>
+                </div>
+            </div>
+        </div>
+        <div class="title-4">11. order</div>
+        <div class="row flex-row">
+            <div class="col-3 order-sm-1 order-md-2 order-lg-3 order-xl-4 order-xxl-0">
+                <div class="box01 bg-success">
+                    <div class="display-1 text-center">1</div>
+                </div>
+            </div>
+            <div class="col-3 order-sm-2 order-md-3 order-lg-4 order-xl-0 order-xxl-1">
+                <div class="box01 bg-success">
+                    <div class="display-1 text-center">2</div>
+                </div>
+            </div>
+            <div class="col-3 order-sm-3 order-md-4 order-lg-0 order-xl-1 order-xxl-2">
+                <div class="box01 bg-success">
+                    <div class="display-1 text-center">3</div>
+                </div>
+            </div>
+            <div class="col-3 order-sm-4 order-md-0 order-lg-1 order-xl-2 order-xxl-3">
+                <div class="box01 bg-success">
+                    <div class="display-1 text-center">4</div>
+                </div>
+            </div>
+            <div class="col-3 order-sm-0 order-md-1 order-lg-2 order-xl-3 order-xxl-4">
+                <div class="box01 bg-success">
+                    <div class="display-1 text-center">5</div>
+                </div>
+            </div>
+        </div>
+        <div class="title-4">12.推格子(水平) ms-?-auto , me-?-auto</div>
+        <div class="row d-flex flex-row">
+            <div class="col-3 me-lg-auto">
+                <div class="box01 bg-light">
+                    <div class="display-1 text-center">1</div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="box01 bg-light">
+                    <div class="display-1 text-center">2</div>
+                </div>
+            </div>
+            <div class="col-3 ms-md-auto">
+                <div class="box01 bg-light">
+                    <div class="display-1 text-center">3</div>
+                </div>
+            </div>
+        </div>
+        <div class="title-4">13.推格子(垂直) mt-?-auto , mb-?-auto</div>
+        <div class="row flex-column" style="height: 100vh;">
+            <div class="col-3 mt-lg-auto">
+                <div class="box01 bg-light">
+                    <div class="display-1 text-center">1</div>
+                </div>
+            </div>
+            <div class="col-3 mb-lg-auto mt-lg-auto">
+                <div class="box01 bg-light">
+                    <div class="display-1 text-center">2</div>
+                </div>
+            </div>
+            <div class="col-3 mt-lg-auto">
+                <div class="box01 bg-light">
+                    <div class="display-1 text-center">3</div>
+                </div>
+            </div>
+        </div>
+        <div class="title-4">14.spacing p-,pt-,pb-,ps-,pe-,px-,py-,m,mt-,mb-,ms-,me-</div>
+        <div class="row bg-danger p-3 m-5">
+            <div class="col-12 bg-warning mb-2 py-4 px-4 ">
+                <p class="bg-info">各級美國星座是這樣刷新，給我出售，不必產業，靈活春天經濟厲害根據改變，發展突破當然科學遭遇能力無派權力顏色填寫請大家美女，行。</p>
+            </div>
+            <div class="col-12 bg-warning pt-2 mt-5 px-4">
+                <p class="bg-light ">組成交給隨着魔獸推坑王對此誠信近年來便宜驚人，父母硬盤對了回頭相比這時，留學我有兩位還會得分懷疑如果高手綠色上述對話新聞難以本人，把它主體進攻國內外每個樓上指南小子電影，大大教學之一製品笑道吸收展示環境返回把我隊員一部分刷新聯繫方式，分公司不說就要出口藥物是的考慮，南方。</p>
+            </div>
+        </div>
+    </div>
+    <script src="JS/bootstrap.bundle.js"></script>
+</body>
+</html>
