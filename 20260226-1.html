@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表單</title>
+    <link rel="stylesheet" href="CSS (1)/bootstrap.css">
+    <link rel="stylesheet" href="CSS (1)/20260127-2 (1).css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="display-3 p-3 my-4 fw-900 text-info">CH11 表單相關應用</div>
+        <div class="h2 py-3 fw-900 text-primary">1.表單樣式(form)</div>
+        <div class="row">
+            <div class="col-12">
+                <form id="myForm">
+                    <div class="mb-3">
+                        <label class="form-label fw-900">帳號</label>
+                        <input type="text" class="form-control " id="username01" placeholder="帳號字數1~6!">
+                        <div class="valid-feedback">輸入字數符合</div>
+                        <div class="invalid-feedback">輸入字數不符合</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label fw-900">密碼</label>
+                        <input type="password" class="form-control" id="password01" placeholder="密碼字數2~8!">
+                        <div class="valid-feedback">輸入字數符合</div>
+                        <div class="invalid-feedback">輸入字數不符合</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label fw-900">Email</label>
+                        <input type="email" class="form-control" id="email01" placeholder="字數2~10!">
+                        <div class="valid-feedback">輸入字數符合</div>
+                        <div class="invalid-feedback">輸入字數不符合</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">送出</button>
+                </form>
+            </div>
+        </div>
+        <!-- 標線 -->
+        <hr class="my-5">
+        <div class="h2 py-3 fw-900 text-primary">2.表單樣式(不使用form)</div>
+        <div class="row">
+            <div class="col-12">
+
+                <div class="mb-3">
+                    <label for="" class="form-label fw-900">帳號</label>
+                    <input type="text" class="form-control" id="username02" placeholder="字數1~16">
+                    <div class="valid-feedback">輸入字數符合</div>
+                    <div class="invalid-feedback">輸入字數不符合</div>
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label fw-900">密碼</label>
+                    <input type="password" class="form-control" id="password02" placeholder="字數輸入8~20">
+                    <div class="valid-feedback">輸入字數符合</div>
+                    <div class="invalid-feedback">輸入字數不符合</div>
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label fw-900">Email</label>
+                    <input type="email" class="form-control" id="email02" placeholder="字數輸入8~20">
+                    <div class="valid-feedback">輸入字數符合</div>
+                    <div class="invalid-feedback">輸入字數不符合</div>
+                </div>
+                <button type="submit" class="btn btn-primary" id="btn02">送出</button>
+
+            </div>
+        </div>
+        <hr class="mt-3">
+        <div class="h2 py-3 fw900 text-black">3.select</div>
+        <div class="row">
+            <div class="col-12">
+                <select name="" id="mycity" class="form-select form-select-lg">
+                    <option value="" class="text-center" disabled selected>***請選擇縣市***</option>
+                    <option value="台中市">台中市</option>
+                    <option value="台北市">台北市</option>
+                    <option value="台南市">台南市</option>
+                </select>
+            </div>
+        </div>
+        <div class="h2 py-3 fw900 text-warning ">韓團</div>
+        <div class="row">
+            <div class="col-12">
+                <select name="" id="mygroup" class="form-select form-select-lg">
+                    <option value="" class="text-center" disabled selected>***請選擇團體***</option>
+                    <option value="BLACKPINK">BLACKPINK</option>
+                    <option value="TWICE">TWICE</option>
+                    <option value="aespa">aespa</option>
+                </select>
+            </div>
+        </div>
+        <hr class="mt-5">
+        <div class="h2 py-3 fw-900 text-secondary">4.range</div>
+        <div class="row">
+            <div class="mb-3">
+                <label for="" class="form-label">數量: <span class="text-success h2 fw-900"
+                        id="num_text">63</span>個</label>
+                <input type="range" class="form-range" min="0" max="100" id="num" step="1" value="63">
+            </div>
+        </div>
+        <hr class="mt-5">
+        <div class="h2 py-3 fw-900 text-secondary">5.Datalist(串界後端推薦熱門食物)</div>
+        <div class="row">
+            <div class="mb-3">
+                <label for="" class="form-label">美食紀錄</label>
+                <input type="text" class="form-control" list="foodlist">
+                <datalist id="foodlist">
+                    <option value="牛肉麵"></option>
+                    <option value="漢堡"></option>
+                    <option value="炒飯"></option>
+                    <option value="可樂"></option>
+                </datalist>
+            </div>
+        </div>
+        <hr class="mt-5">
+        <div class="h2 py-3 fw-900 text-secondary">6.</div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-check">
+                    <input type="checkbox" name="sports" class="form-check-input" value="跑步">
+                    <label for="" class="form-check-label">跑步</label>
+
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="sports" class="form-check-input" value="游泳">
+                    <label for="" class="form-check-label">游泳</label>
+
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="sports" class="form-check-input" value="爬山">
+                    <label for="" class="form-check-label">爬山</label>
+
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="sports" class="form-check-input" value="重訓">
+                    <label for="" class="form-check-label">重訓</label>
+
+                </div>
+                <button class="btn btn-warning my-3" id="btn-6">確認</button>
+            </div>
+        </div>
+        <hr class="mt-5">
+        <div class="h2 py-3 fw-900 text-secondary">7.radio(單選)</div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-check">
+                    <input type="radio" name="edu" class="form-check-input" value="大學">
+                    <label for="" class="form-check-label">大學</label>
+
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="edu" class="form-check-input" value="高中職">
+                    <label for="" class="form-check-label">高中職</label>
+
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="edu" class="form-check-input" value="研究所">
+                    <label for="" class="form-check-label">研究所</label>
+
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="edu" class="form-check-input" value="其他">
+                    <label for="" class="form-check-label">其他</label>
+
+                </div>
+                <button class="btn btn-warning my-3" id="btn-7">確認</button>
+            </div>
+        </div>
+        <hr class="mt-5">
+        <div class="h2 py-3 fw-900 text-secondary">8. floating(漂浮表單)</div>
+        <div class="row">
+            <div class="col-12">
+                <div class="mb-3 form-floating">
+                    <input type="text" class="form-control" name="" id="" placeholder="">
+                    <label for="" class="form-check-label">帳號</label>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="JS/bootstrap.bundle.js"></script>
+    <script src="JS/jquery-4.0.0.js"></script>
+    <script>
+        // 公有變數
+        let flag_username01 = false
+        let flag_password01 = false
+        let flag_email01 = false
+
+        let flag_username02 = false
+        let flag_password02 = false
+        let flag_email02 = false
+
+        const groupData = [
+            {
+                "groupName": "BLACKPINK",
+                "members": 4,
+                "topSong": "DDU-DU DDU-DU"
+            },
+            {
+                "groupName": "TWICE",
+                "members": 9,
+                "topSong": "Cheer Up"
+            },
+            {
+                "groupName": "aespa",
+                "members": 4,
+                "topSong": "Next Level"
+            },
+            {
+                "groupName": "IVE",
+                "members": 6,
+                "topSong": "LOVE DIVE"
+            },
+            {
+                "groupName": "NewJeans",
+                "members": 5,
+                "topSong": "Hype Boy"
+            },
+            {
+                "groupName": "ITZY",
+                "members": 5,
+                "topSong": "DALLA DALLA"
+            },
+            {
+                "groupName": "Red Velvet",
+                "members": 5,
+                "topSong": "Psycho"
+            },
+            {
+                "groupName": "MAMAMOO",
+                "members": 4,
+                "topSong": "You're the Best"
+            },
+            {
+                "groupName": "Girls' Generation",
+                "members": 8,
+                "topSong": "Gee"
+            },
+            {
+                "groupName": "STAYC",
+                "members": 6,
+                "topSong": "ASAP"
+            }
+        ]
+        // 主程式
+        $(function () {
+            // 1.表單樣式(form)
+            $("#myForm").submit(function (e) {
+                if (flag_username01 == true && flag_password01 == true && flag_email01 == true) {
+                    e.preventDefault();
+                    console.log("觸發!");
+                    console.log($("#username01").val());
+                    console.log($("#password01").val());
+                    console.log($("#email01").val());
+                }
+                else {
+                    e.preventDefault();
+                    alert("欄位有錯請修正");
+                }
+
+            });
+
+            // $("#username01").keyup(function(){
+            //     console.log($("#username01").val());
+            // });
+            $("#username01").blur(function () {
+                console.log($(this).val().length);
+                if ($(this).val().length > 0 && $(this).val().length < 7) {
+                    // 符合規定
+                    $(this).removeClass("is-invalid").addClass("is-valid");
+                    flag_username01 = true;
+                } else {
+                    // 不符合規定
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    flag_username01 = false;
+                }
+            });
+
+
+            // 數值與焦點同時改變才會觸發
+            // $("#password01").keyup(function(){
+            //     console.log($("#password01").val());
+
+            // });
+
+
+            $("#password01").blur(function () {
+                console.log($(this).val().length);
+                if ($(this).val().length > 1 && $(this).val().length < 9) {
+                    $(this).removeClass("is-invalid").addClass("is-valid");
+                    flag_password01 = true;
+                } else {
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    flag_password01 = false;
+                }
+
+            });
+            // 焦點同時改變即刻觸發
+            $("#email01").blur(function () {
+                // console.log($("#email01").val());
+                console.log($(this).val().length);
+                if ($(this).val().length > 1 && $(this).val().length < 11) {
+                    $(this).removeClass("is-invalid").addClass("is-valid");
+                    flag_email01 = true;
+                } else {
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    flag_email01 = false;
+                }
+
+            });
+
+            // 2.表單樣式不使用form
+            $("#btn02").click(function () {
+                if (flag_username02 == true && flag_password02 == true && flag_email02 == ture) {
+                    console.log("btn按鈕監聽觸發!");
+                    console.log($("#username02").val());
+                    console.log($("#password02").val());
+                    console.log($("#email02").val());
+                } else {
+
+                    alert("欄位有錯請修正");
+
+                }
+            });
+
+            $("#username02").blur(function () {
+                console.log($(this).val().length);
+                if ($(this).val().length > 0 && $(this).val().length < 16) {
+                    $(this).removeClass("is-invalid").addClass("is-valid");
+                    flag_username02 = true;
+                } else {
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    flag_username02 = false;
+                }
+            });
+            $("#password02").blur(function () {
+                console.log($(this).val().length);
+                if ($(this).val().length > 7 && $(this).val().length < 21) {
+                    $(this).removeClass("is-invalid").addClass("is-valid");
+                    flag_password02 = true;
+                } else {
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    flag_password02 = false;
+                }
+            });
+            $("#email02").blur(function () {
+                console.log($(this).val().length);
+                if ($(this).val().length > 7 && $(this).val().length < 21) {
+                    $(this).removeClass("is-invalid").addClass("is-valid");
+                    flag_email02 = true;
+                } else {
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    flag_email02 = false;
+                }
+            });
+            /*
+            3.**************select*******
+            */
+            $("#mycity").change(function () {
+                console.log($(this).val());
+            });
+
+            //    渲染團體選單
+            $("#mygroup").empty();
+            $("#mygroup").append(`<option value="" class="text-center" disabled selected>***請選擇團體***</option>`);
+            groupData.forEach(function (item) {
+                // console.log(item.groupName);
+                let strHTML = `<option value="${item.groupName}">${item.groupName}</option>`;
+                $("#mygroup").append(strHTML);
+            });
+            $("#mygroup").change(function () {
+                console.log($(this).val());
+            });
+
+            /*
+            4.***************range****************** 
+            */
+            $("#num").on("input", function () {
+                console.log($(this).val());
+                $("#num_text").text($(this).val());
+            });
+
+
+
+            /*
+            6.************checkedbox(複選)**********
+            */
+
+            // 初始值設定
+            $("input[name='sports'][value='重訓']").prop("checked", true);
+            $("input[name='sports'][value='跑步']").prop("checked", true);
+            $("input[name='sports'][value='游泳']").prop("checked", true);
+            $('#btn-6').click(function () {
+                let result = [];//儲存勾選的興趣
+
+
+
+                $("input[name='sports']:checked").each(function () {
+                    console.log($(this).val());
+                    result.push($(this).val());
+                });
+
+                if (result.length == 0) {
+                    alert("至少選擇一個運動!");
+                } else {
+                    console.log(result);
+                }
+                // let result = [];
+                // $("input[name='sports']:checked").each(function(){
+                //     console.log($(this).val());
+                // });
+
+                // $("input[name='sports']:checked").each(function(){
+                //     console.log($(this).val());
+                // });
+
+            });
+
+            /*
+            7.*****************radio**************************
+            */
+            $("input[name='edu'][value='大學']").prop("checked", true);
+            
+            $('#btn-7').click(function(){
+                let result = [];
+                $("input[name='edu']:checked").each(function () {
+                console.log($(this).val());
+                result.push($(this).val());
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>

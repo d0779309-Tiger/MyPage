@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS (1)/bootstrap.css">
+    <link rel="stylesheet" href="CSS (1)/20260127-2 (1).css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand text-danger fw-900" href="#">CRUD</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-warning" aria-current="page"
+                            href="20260310-CRUD-showtable.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-warning" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="20260310-CRUD-M.html">新增產品</a></li>
+                            <li><a class="dropdown-item" href="20260310-CRUD-showtable.html">產品列表</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled text-warning">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row justify-content-center vh-100 align-items-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg">
+                    <div class="card-heaeder text-bg-danger fw-900 h4 px-1">新增產品</div>
+                    <div class="mt-2">
+                        <div class="card-body">
+                            <label for="" class="form-label">訂購者名稱</label>
+                            <input type="text" class="form-control is-invalid" id="username" placeholder="字數1~8">
+                            <div class="invalid-feedback " id="username_invalid-feedback">該用戶名稱已存在，不能使用此名稱!</div>
+                            <div class="valid-feedback " id="username_valid-feedback">該用戶名稱不存在，可以使用此名稱!</div>
+                        </div>
+                    </div>
+                    <div class="mt-1">
+                        <div class="card-body">
+                            <label for="" class="form-label">品名</label>
+                            <input type="text" class="form-control" id="product" placeholder="字數1~8">
+                            <div class="valid-feedback">符合規定</div>
+                            <div class="invalid-feedback">不符合規定</div>
+                        </div>
+                    </div>
+                    <div class="mb-1">
+                        <div class="card-body">
+                            <label for="" class="form-label">數量(數量1~10)</label>
+                            <input type="number" min="1" max="10" id="num" class="form-control">
+                            <div class="valid-feedback">符合規定</div>
+                            <div class="invalid-feedback">不符合規定</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card-body">
+                            <label for="" class="form-label">請選擇尺寸</label>
+                            <select name="" class="form-select form-select-lg" id="size">
+
+                                <option value="大" selected>大</option>
+                                <option value="中">中</option>
+                                <option value="小">小</option>
+                            </select>
+                            <div class="valid-feedback">已選擇尺寸</div>
+                            <div class="invalid-feedback">請選擇尺寸</div>
+                        </div>
+                    </div>
+                    <div class="my-3 ps-3">
+                        <button class="btn btn-outline-primary" id="ok_btn">確認</button>
+                        <button class="btn btn-outline-danger" id="no_btn">取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="JS/bootstrap.bundle.js"></script>
+    <script src="JS/jquery-4.0.0.js"></script>
+    <script src="JS/sweetalert2.all.min.js"></script>
+    <script>
+
+        let flag_username = false;
+        let flag_product = false;
+        let flag_num = false;
+        let flag_size = true;
+
+        $(function () {
+            $('#username').blur(function () {
+                if ($(this).val().length > 0 && $(this).val().length < 9) {
+                    // $(this).removeClass("is-invalid").addClass("is-valid");
+                    // flag_username = true;
+                    let username = $(this).val();
+                    // 傳遞至後端驗證此產品是否已經存在
+                    $.ajax({
+                        type: "GET",
+                        url: `http://localhost:3000/orders?username=${username}`,
+                        dataType: "json",
+                        success: function (data) {
+                            console.log(data);
+                            if (data.length > 0) {
+                                // 該用戶已存在，不能使用此名稱
+                                $("#username").removeClass("is-valid").addClass("is-invalid");
+                                $("#username_invalid-feedback").text("該用戶名稱已存在，不能使用此名稱!");
+                                flag_username = false;
+                            } else {
+                                // 該用戶名稱不存在，可以使用此名稱
+                                $("#username").removeClass("is-invalid").addClass("is-valid");
+                                $("#username_valid-feedback").text("該用戶名稱不存在，可以使用此名稱!");
+                                flag_username = true;
+                            }
+                        },
+                        error: function () {
+                            Swal.fire({
+                                title: "更新失敗",
+                                text: "api連結:http://localhost:3000/orders",
+                                icon: "error"
+                            });
+                        }
+                    });
+                } else {
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    flag_username = false;
+                }
+            });
+
+            $('#product').blur(function () {
+                if ($(this).val().length > 0 && $(this).val().length < 9) {
+                    $(this).removeClass("is-invalid").addClass("is-valid");
+                    flag_product = true;
+                } else {
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    flag_product = false;
+                }
+            });
+
+            $('#num').blur(function () {
+                if ($(this).val() >= 1 && $(this).val() < 11) {
+                    $(this).removeClass("is-invalid").addClass("is-valid");
+                    flag_num = true;
+                } else {
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    flag_num = false;
+                }
+            });
+            $('#size').blur(function () {
+                if ($(this).val() != "" && $(this).val() != null) {
+                    $(this).removeClass("is-invalid").addClass("is-valid");
+                    flag_size = true;
+                } else {
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    flag_size = false;
+                }
+            });
+            $('#ok_btn').click(function () {
+                if (flag_username && flag_product && flag_num && flag_size) {
+                    // 轉成json格式
+                    let orderData = {
+                        username: $('#username').val(),
+                        product: $('#product').val(),
+                        num: $('#num').val(),
+                        size: $('#size').val(),
+                        created_at: new Date().toLocaleString()
+
+
+                    };
+                    console.log(JSON.stringify(orderData))
+                    // 並傳遞至後端API
+                    $.ajax({
+                        type: "POST",
+                        url: "http://localhost:3000/orders",
+                        contentType: "application/json",
+                        data: JSON.stringify(orderData),
+                        success: function (data) {
+                            console.log(data);
+                            Swal.fire({
+                                title: "新增成功",
+                                showDenyButton: false,
+                                showCancelButton: false,
+                                icon: "success",
+                                confirmButtonText: "確認",
+                                denyButtonText: `Don't save`
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    $("#username").val("").removeClass("is-valid is-invalid");
+                                    $("#product").val("").removeClass("is-valid is-invalid");
+                                    $("#num").val("1").removeClass("is-valid is-invalid");
+                                    $("#size").val("大").removeClass("is-valid is-invalid");
+                                    flag_username = false;
+                                    flag_product = false;
+                                    flag_num = false;
+                                    flag_size = true;
+                                }
+                            });
+                        }
+
+                    });
+                } else {
+                    // 欄位有錯誤，用sweetalert顯示錯誤
+                    Swal.fire({
+                        title: "欄位有錯請修正",
+                        showDenyButton: false,
+                        showCancelButton: false,
+                        icon: "error",
+                        confirmButtonText: "確認",
+                        denyButtonText: `Don't save`
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            return;
+                        }
+                    });
+                }
+            });
+
+            $("#no_btn").click(function () {
+                $("#username").val("").blur();
+                $("#product").val("").blur();
+                $("#num").val("").blur();
+                $("#size").val("大").blur();
+
+            });
+        });
+    </script>
+</body>
+
+</html>
