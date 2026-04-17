@@ -101,6 +101,37 @@ body {
     /* #5EBB4B + #E4DACE + #631F16 */
     --muted-denim: #6D8588;
     /* #498EAF + #631F16 混合 */
+    /* 冷調系 */
+--new-ice: #C8DFE8;
+--new-glacier: #A0C4D4;
+--new-arctic: #6FA8C0;
+--new-frost: #3D7A96;
+--new-lagoon: #2E6B82;
+--new-mist: #B8CECE;
+
+/* 夜間系 */
+--new-midnight: #1C2B3A;
+--new-dusk-deep: #2D3B4E;
+--new-twilight: #3D4F62;
+--new-moonstone: #546878;
+--new-night-gold: #7A6234;
+--new-ember: #8C3B20;
+
+/* 粉彩系 */
+--new-petal: #F0E2D0;
+--new-cream: #F5EDD8;
+--new-blush: #F0D5C0;
+--new-sage-light: #C8DCC8;
+--new-sky-wash: #C4D8E4;
+--new-lavender-sand: #D8D0C4;
+
+/* 深色飽和系 */
+--new-forest-deep: #2D5E30;
+--new-jungle: #3A7040;
+--new-burgundy: #7A1E2E;
+--new-mahogany: #6B2D1A;
+--new-indigo: #3A4A8C;
+--new-obsidian: #2A3040;
 }
 
 /* 文字相關 */
