@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飯店列表</title>
+    <link rel="stylesheet" href="CSS (1)/bootstrap.css">
+    <link rel="stylesheet" href="CSS (1)/20260127-2 (1).css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <select name="" id="city" class="form-control form-select-lg">
+                    <option value="" class="text-center" disabled selected>***請選擇縣市***</option>
+                    <option value="臺中市">臺中市</option>
+                    <option value="臺北市">臺北市</option>
+                    <option value="新竹市">新竹市</option>
+                    <option value="新北市">新北市</option>
+                    <option value="花蓮縣">花蓮縣</option>
+                    <option value="彰化市">彰化市</option>
+                    <option value="宜蘭縣">宜蘭縣</option>
+                    <option value="雲林縣">雲林縣</option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+
+            </div>
+            <div class="col-6">
+                <select name="" id="town" class="form-control form-select-lg">
+                    <option value="" class="text-center" selected disabled>***請選擇鄉鎮***</option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+
+            </div>
+            <div class="row">
+                <div class="col-md-4 mt-3"></div>
+                <div class="col-md-4 mt-3">
+                    <input type="text" id="keyword" class="form-control form-control-lg text-center"
+                        placeholder="請輸入關鍵字搜尋">
+                </div>
+                <div>
+
+                </div>
+            </div>
+            <div class="row" id="hostlist">
+                <div class="col-12 text-center text-secondary mt-3">
+                    請先選擇縣市及鄉鎮或輸入關鍵字
+                </div>
+            </div>
+        </div>
+        <div class="row my-2" id="gbody">
+            <div class="col-lg-4 col-md-6 col-xl-2 border-3">
+                <div class="box shadow-lg h-100">
+                    <div
+                        style="background-image:url ;height: 200px; background-position: center center;  background-size: cover;">
+                    </div>
+                    <div>歡迎光臨，這裡以上是圖片</div>
+                    <div>這裡會是飯店名稱:</div>
+                    <div>這裡會是住址:</div>
+                    <div>這裡會是電話:</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center my-3" id="pagination">
+                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+    <script src="JS/bootstrap.bundle.js"></script>
+    <script src="JS/jquery-4.0.0.js"></script>
+    <script>
+        let selected_city = "";
+        let selected_town = "";
+        let CityCountyData;
+        let keyword = "";
+        let currentPage = 1; //目前頁數
+        let pageSize = 6;
+        let currentFilteredData = [];
+        let HotelList = [];
+        $(function () {
+            $.ajax({
+                type: "GET",
+                url: "JS/HotelList.json",
+                dataType: "json",
+                success: function (data) {
+                    console.log(data.Hotels);
+                    // 清洗資料
+                    HotelList = normalize(data.Hotels);
+                    console.log("normalize 後:", HotelList);
+                },
+                error: function () {
+                    console.log("error");
+                }
+            });
+            $.ajax({
+                type: "GET",
+                url: "JS/CityCountyData.json",
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                    CityCountyData = data;
+                    //產生縣市選單
+
+                    $("#city").empty();
+                    $("#city").append(`<option value="" class="text-center" disabled selected>***請選擇縣市***</option>`)
+                    data.forEach(function (item) {
+                        let strHTML = `<option value="${item.CityName}">${item.CityName}</option>`
+                        $('#city').append(strHTML);
+                    });
+
+                }
+            });
+
+
+
+            // 監聽縣市選單
+            $("#city").change(function () {
+                console.log($(this).val());
+                selected_city = $(this).val();
+                selected_town = "";   // ← 加這行
+                currentPage = 1;
+                // 清除關鍵字
+                keyword = "";
+                $("#keyword").val("");
+                // 產生所選取之縣市的鄉鎮區列表
+                $("#town").empty();
+                $("#town").append(`<option value="" class="text-center" disabled selected>***請選擇鄉鎮***</option>`)
+                CityCountyData.filter(function (item) {
+                    return item.CityName === selected_city
+                })[0].AreaList.forEach(function (area) {
+                    const strHTML = `<option value="${area.AreaName}">${area.AreaName}</option>`
+                    $("#town").append(strHTML);
+                });
+                $("#town").prop("disabled", false);
+                applyFilter();        // ← 加這行
+            });
+            // 監聽鄉鎮區選單
+            $("#town").change(function () {
+                console.log($(this).val());
+                selected_town = $(this).val();
+                currentPage = 1;
+                applyFilter();
+            });
+            // 監聽搜尋框
+            $('#keyword').on("input", function () {
+                selected_city = "";
+                selected_town = "";
+                $("#city").val("");
+                $("#town").val("");
+                $("#town").prop("disabled", true);
+                $("#gbody").empty();
+                $("#pagination").empty();
+                $("#hostlist").html(`<div class="col-12 text-center text-secondary mt-3">請輸入關鍵字搜尋</div>`);
+            });
+
+            // 打字時才篩選
+            $('#keyword').on("input", function () {
+                keyword = $(this).val().trim();
+                currentPage = 1;
+
+                if (keyword === "") {
+                    $("#gbody").empty();
+                    $("#pagination").empty();
+                    $("#hostlist").html(`<div class="col-12 text-center text-secondary mt-3">請輸入關鍵字搜尋</div>`);
+                    return;
+                }
+
+                applyFilter();
+            });
+            // page監聽
+            $(document).on("click", ".page-link", function (e) {
+                e.preventDefault();//避免超連結跳動
+                const page = $(this).data("page");
+                if (!page) {
+                    return;
+                }
+                currentPage = page;
+                renderTable(currentFilteredData);
+                renderPagination(currentFilteredData);
+            });
+        });
+
+
+
+        function normalize(data) {
+
+            return data.map(function (item) {
+                const city = (item.PostalAddress?.City ?? "").trim();
+                const town = (item.PostalAddress?.Town ?? "").trim();
+                const address = (item.PostalAddress?.StreetAddress ?? "").trim();
+                const name = (item.HotelName ?? "").trim();
+                const tel = (item.Telephones?.[0]?.Tel ?? "").trim();
+                const imgURL = (item.Images?.[0]?.URL ?? "").trim();
+                return {
+                    City: city === "" ? "未提供住址" : city,
+                    Town: town === "" ? "未提供住址" : town,
+                    Address: address === "" ? "未提供住址" : address,
+                    HotelName: name === "" ? "無證照號碼" : name,
+                    Telephones: tel === "" ? "未提供電話" : tel,
+                    ImgURL: imgURL === "" ? "未提供圖片" : imgURL
+                }
+                // 保留有圖片的資料
+            }).filter(function (item) {
+                return item.ImgURL != "未提供圖片"
+            });
+
+        }
+        function applyFilter() {
+            const result = HotelList.filter(function (item) {
+                const matchCity = selected_city === "" || item.City === selected_city;
+                const matchTown = selected_town === "" || item.Town === selected_town;
+                const text = `${item.HotelName}${item.City}${item.Town}${item.Address}${item.Telephones}`;
+                const matchkeyword = keyword === "" || text.includes(keyword);
+                return matchCity && matchTown && matchkeyword;
+            });
+            currentFilteredData = result;
+            renderTable(currentFilteredData);
+            renderPagination(currentFilteredData);
+            console.log(currentFilteredData);
+        }
+
+        function renderTable(data) {
+            $('#hostlist').empty();
+
+            if (data.length === 0) {
+                $("#hostlist").append(`<div class="col-12 text-center text-danger mt-5">查無符合資料</div>`);
+
+                return;
+            }
+
+            $('#gbody').empty();
+            //決定開始與結束的筆數
+            const startIndex = (currentPage - 1) * pageSize;
+            const endIndex = startIndex + pageSize;
+            const pageData = data.slice(startIndex, endIndex);
+
+            pageData.forEach(function (item) {
+                let strHTML = `<div class="col-lg-4 col-md-6 col-xl-4 border-3" >
+                <div class="box shadow-lg h-100 p-2">
+                <div style="background-image:url(${item.ImgURL}) ;height: 200px; background-position: center center;  background-size: cover;"></div>
+                <div>飯店:${item.HotelName}</div>
+                <div class="mt-1">📍 ${item.City}${item.Town}${item.Address}</div>
+                <div>📞 ${item.Telephones}</div>
+               <a href="#" class="btn btn-warning text-center mt-2">查看更多</a>
+               </div>
+            </div>`
+                $('#gbody').append(strHTML);
+            });
+
+
+        }
+        function renderPagination(data) {
+            console.log(data);
+            $("#pagination").empty();
+
+            const totalPages = Math.ceil(data.length / pageSize); //無條件進位
+            if (data.length === 0 || totalPages <= 1) return;
+
+            // 計算顯示範圍（最多10頁）
+            let startPage = Math.max(1, currentPage - 4);
+            let endPage = Math.min(totalPages, startPage + 9);
+
+            // 如果尾端不足10頁，往前補
+            if (endPage - startPage < 9) {
+                startPage = Math.max(1, endPage - 9);
+            }
+
+            // 上一頁
+            $("#pagination").append(`
+        <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+            <a class="page-link" href="#" data-page="${currentPage - 1}">«</a>
+        </li>`);
+
+            // 頁碼
+            for (let i = startPage; i <= endPage; i++) {
+                $("#pagination").append(`
+            <li class="page-item ${currentPage === i ? 'active' : ''}">
+                <a class="page-link" href="#" data-page="${i}">${i}</a>
+            </li>`);
+            }
+
+            // 下一頁
+            $("#pagination").append(`
+        <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+            <a class="page-link" href="#" data-page="${currentPage + 1}">»</a>
+        </li>`);
+        }
+
+
+
+    </script>
+</body>
+
+</html>
