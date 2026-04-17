@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習3</title>
+    <link rel="stylesheet" href="CSS (1)/bootstrap.css">
+    <link rel="stylesheet" href="CSS (1)/20260127-2 (1).css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <select name="" id="city" class="form-control form-select-lg">
+                    <option value="" class="text-center" disabled selected>***請選擇縣市***</option>
+                    <option value="臺中市">臺中市</option>
+                    <option value="臺北市">臺北市</option>
+                    <option value="新竹市">新竹市</option>
+                    <option value="新北市">新北市</option>
+                    <option value="花蓮縣">花蓮縣</option>
+                    <option value="彰化市">彰化市</option>
+                    <option value="宜蘭縣">宜蘭縣</option>
+                    <option value="雲林縣">雲林縣</option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+
+            </div>
+            <div class="col-6">
+                <select name="" id="town" class="form-control form-select-lg">
+                    <option value="" class="text-center" disabled selected>***請選擇鄉鎮***</option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+
+            </div>
+
+        </div>
+        <table class="table table-rwd">
+            <thead>
+                <tr class="table-warning">
+                    <th>Id</th>
+                    <th>License Address</th>
+                    <th>City</th>
+                    <th>Town</th>
+                    <th>HotelName</th>
+                    <th>Telephones</th>
+                </tr>
+            </thead>
+            <tbody id="hbody">
+                <tr>
+                    <td>XX</td>
+                    <td>XX</td>
+                    <td>XX</td>
+                    <td>XX</td>
+                    <td>Xx</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <!--
+        -->
+    <script src="JS/bootstrap.bundle.js"></script>
+    <script src="JS/jquery-4.0.0.js"></script>
+
+    <script>
+        let selected_town;
+        let selected_city;
+        let CityCountyData;
+        let HotelList;
+        $(function () {
+            $.ajax({
+                type: "GET",
+                url: "JS/HotelList.json",
+                dataType: "json",
+                success: function (data) {
+                    console.log(data.Hotels);
+                    // 清洗資料
+                    HotelList = normalize(data.Hotels);
+                },
+                error: function () {
+                    console.log("error");
+                }
+            });
+            $.ajax({
+                type: "GET",
+                url: "JS/CityCountyData.json",
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                    CityCountyData = data;
+                    //產生縣市選單
+
+                    $("#city").empty();
+                    $("#city").append(`<option value="" class="text-center" disabled selected>***請選擇縣市***</option>`)
+                    data.forEach(function (item) {
+                        let strHTML = `<option value="${item.CityName}">${item.CityName}</option>`
+                        $('#city').append(strHTML);
+                    });
+
+                }
+            });
+
+
+
+            // 監聽縣市選單
+            $("#city").change(function () {
+                console.log($(this).val());
+                selected_city = $(this).val();
+                // 產生所選取之縣市的鄉鎮區列表
+                $("#town").empty();
+                $("#town").append(`<option value="" class="text-center" disabled selected>***請選擇鄉鎮***</option>`)
+                CityCountyData.filter(function (item) {
+                    return item.CityName === selected_city
+                })[0].AreaList.forEach(function (area) {
+                    const strHTML = `<option value="${area.AreaName}">${area.AreaName}</option>`
+                    $("#town").append(strHTML);
+                });
+                $("#town").prop("disabled", false);
+            });
+            // 監聽鄉鎮區選單
+            $("#town").change(function () {
+                console.log($(this).val());
+                selected_town = $(this).val();
+
+                const result = HotelList.filter(function (item) {
+                    return item.City === selected_city && item.Town === selected_town
+                });
+                renderTable(result)
+            });
+        });
+       
+                // 1. forEach 跑的是 data 而不是 result
+                // 應該先把 filter 結果存到變數，再跑 forEach：
+                // 2. normalize 的欄位名稱是 PostalAddress 但 filter 和 forEach 用 item.City
+                // 
+        function renderTable(data){
+                $("#hbody").empty();
+                data.forEach(function (item) {
+                    let strHTML = ` <tr>
+                                            <td>${item.HotelID}</td>
+                                            <td>${item.HotelLicenseNumber}</td>
+                                            <td>${item.City}</td>
+                                            <td>${item.Town}</td>
+                                            <td>${item.HotelName}</td>
+                                            <td>${item.Telephones}</td>
+                                            </tr>`
+                    $('#hbody').append(strHTML);
+                });
+            }
+        function normalize(data) {
+
+            return data.map(function (item) {
+                const id = (item.HotelID ?? "").trim();
+                const li = (item.HotelLicenseNumber ?? "").trim();
+                const city = (item.PostalAddress?.City ?? "").trim();
+                const town = (item.PostalAddress?.Town ?? "").trim();
+                const name = (item.HotelName ?? "").trim();
+                const tel = (item.Telephones?.[0]?.Tel ?? "").trim();
+                return {
+                    HotelID: id === "" ? "未擁有ID" : id,
+                    HotelLicenseNumber: li === "" ? "無證照號碼" : li,
+                    City: city === "" ? "為提供住址" : city,
+                    Town: town === "" ? "為提供住址" : town,
+                    HotelName: name === "" ? "無證照號碼" : name,
+                    Telephones: tel === "" ? "未提供電話" : tel
+                }
+            });
+
+        }
+    </script>
+</body>
+
+</html>

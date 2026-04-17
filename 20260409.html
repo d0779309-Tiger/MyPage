@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>派對公司網站</title>
+    <link rel="stylesheet" href="CSS (1)/bootstrap.css">
+    <link rel="stylesheet" href="CSS (1)/20260127-2 (1).css">
+    <link rel="stylesheet" href="CSS (1)/all.min.css">
+    <link rel="stylesheet" href="CSS (1)/animate.min.css">
+
+    <style>
+        /*All these are for styling only */
+        @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
+
+        .counter {
+            font-family: 'Rampart One', cursive;
+            font-size: 3em;
+            margin: 100vh auto 40vh;
+        }
+
+        .counter:not(.is-visible) {
+            visibility: hidden;
+        }
+
+        .counter1 {
+            font-family: 'Rampart One', cursive;
+            font-size: 3em;
+            margin: 100vh auto 40vh;
+        }
+
+        .counter1:not(.is-visible) {
+            visibility: hidden;
+        }
+
+        .counter2 {
+            font-family: 'Rampart One', cursive;
+            font-size: 3em;
+            margin: 100vh auto 40vh;
+        }
+
+        .counter2:not(.is-visible) {
+            visibility: hidden;
+        }
+
+        @media screen and (min-width: 768px) {
+            .carousel-item {
+                height: 100vh;
+                position: relative;
+            }
+
+            .bbb {
+                height: 350px;
+                width: 400px;
+                background-color: rgba(38, 41, 68, 0.5);
+                top: 20%;
+                left: 15%;
+                position: absolute;
+                border-radius: 10px;
+            }
+
+            .bbb a {
+                border-radius: 10px;
+            }
+
+            .bbb1 {
+                height: 350px;
+                width: 400px;
+                background-color: rgba(81, 81, 83, 0.5);
+                top: 20%;
+                left: 15%;
+                position: absolute;
+                border-radius: 10px;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+
+
+            .timeline-section {
+                position: relative;
+            }
+
+            .timeline-section::before {
+                position: absolute;
+                content: "";
+                top: 0;
+                bottom: 20px;
+                width: 3px;
+                background-color: var(--soft-honey);
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .timeline-section-pointer {
+                position: relative;
+            }
+
+            .timeline-section-pointer::before {
+                position: absolute;
+                content: "";
+                width: 20px;
+                height: 20px;
+                border-radius: 100px;
+                background-color: var(--color-1c);
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+                border: 3px solid var(--color-4c);
+            }
+
+            .timeline-section-pointer:hover:before {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        .cc {
+            max-width: 550px;
+            min-height: 550px;
+            background-color: rgba(250, 239, 94, 0.2);
+            border-radius: 20px;
+            margin-bottom: 20px;
+            margin-left: 0;
+            padding: 15px;
+        }
+
+        .cc1 {
+            max-width: 550px;
+            min-height: 550px;
+            background-color: rgba(250, 239, 94, 0.2);
+            border-radius: 20px;
+            margin-bottom: 20px;
+            margin-right: 0;
+            padding: 15px;
+        }
+
+        .pimg {
+            height: 550px;
+            width: 100%;
+        }
+
+        .s08-userimg {
+            width: 120px;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .s08-userimg:hover {
+            transform: scale(1.15);
+            transition: transform 0.5s;
+            box-shadow: 2px 2px 2px 2px antiquewhite;
+            border-radius: 2;
+        }
+
+        @media screen and (max-width: 768px) {
+            .s07-text {
+                z-index: 1;
+                background-color: rgba(38, 41, 68, 0.5);
+                color: azure;
+                padding: 20px;
+                margin: 15px;
+                border-radius: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--***************************社群連結***************************** -->
+    <section id="s01" class="bg-secondary">
+        <div class="container">
+            <div class="text-end">
+                <a href="#" class="text-decoration-none">
+                    <i class="fa-brands fa-square-facebook fa-2x my-1"></i>
+                </a>
+                <a href="#" class=" text-decoration-none ">
+                    <i class="fa-brands fa-line fa-2x my-1" style="color: rgb(39, 192, 63);"></i>
+                </a>
+                <a href="#" class=" text-decoration-none">
+                    <i class="fa-brands fa-square-threads fa-2x text-black my-1"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!--***************************選單***************************** -->
+    <section id="s02">
+        <nav class="navbar navbar-expand-lg bg-dark">
+            <div class="container">
+                <a class="navbar-brand text-danger fw-900 " href="#">
+                    <h1>CZN</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <i class="fa-solid fa-bolt fa-beat-fade fa-2x nav-link "
+                                style="color: rgb(255, 212, 59);"></i>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-warning fs-4" aria-current="page" href="20260409.html">
+                                首頁
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-warning fs-4" href="#">
+                                立即預約
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown mb-1">
+                            <a class="nav-link dropdown-toggle text-warning fs-4 " href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                活動資訊
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">派對形式</a></li>
+                                <li><a class="dropdown-item" href="#">方案價格</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">其他更多</a></li>
+                            </ul>
+
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <button class="btn btn-success mx-1" data-bs-toggle="modal" data-bs-target="#registerModal"
+                            type="button">註冊</button>
+                        <button class="btn btn-primary mx-1" type="button" data-bs-toggle="modal"
+                            data-bs-target="#LoginModal">登入</button>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#infoModal">
+                            <i class="fa-solid fa-bolt fa-beat-fade fa-x5 nav-link fa-2x"
+                                style="color: rgb(255, 212, 59);"></i>
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+    </section>
+    <!--***************************選單***************************** -->
+    <section id="s03">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active bg-cover"
+                    style="background-image: url(images/\(1\).jpg); height: 85vh;background-size: cover; background-position: center;">
+                    <div class="bbb  flex-column col-md-12">
+                        <i class="fa-solid fa-lightbulb fa-bounce vh-85 me-3 fa-2x mt-2"
+                            style="color: rgb(255, 212, 59);"></i>
+                        <span class="text-light h3">活動重點提醒</span>
+                        <p class="text-light mt-2 p-3 h5">
+                            表面較高環境排行策劃桌面，千萬很難抽菸區在我得到地上為您財富僅供背景車輛參與微微學者，本網站發出幾天還能對她超過，休閒視頻回去，特徵教育活動，說完此時技巧反饋對我也有那麼多神經強烈手機來到運行，盯着對外躺在常常，核心教師如今發出福州商業網咖大幅還不，第一。
+                        </p>
+                        <a href="#" class="text-bg-info d-flex justify-content-end p-2 h4 text-decoration-none mt-auto"
+                            style="position: absolute;bottom: 10px; right: 10px;">了解更多</a>
+                    </div>
+                </div>
+                <div class="carousel-item bg-cover"
+                    style="background-image: url(images/3.jpg); height: 85vh; background-size: cover; background-position: center;">
+                    <div class="bbb  flex-column">
+                        <i class="fa-solid fa-lightbulb fa-bounce vh-85 me-3 fa-2x mt-2"
+                            style="color: rgb(255, 212, 59);"></i>
+                        <span class="text-light h3">活動報名</span>
+                        <p class="text-light mt-2 p-3 h5">
+                            表面較高環境排行策劃桌面，千萬很難抽菸區在我得到地上為您財富僅供背景車輛參與微微學者，本網站發出幾天還能對她超過，休閒視頻回去，特徵教育活動，說完此時技巧反饋對我也有那麼多神經強烈手機來到運行，盯着對外躺在常常，核心教師如今發出福州商業網咖大幅還不，第一。
+                        </p>
+                        <a href="#"
+                            class="text-danger d-flex text-bg-warning justify-content-end p-2 h4 text-decoration-none mt-auto"
+                            style="position: absolute;bottom: 10px; right: 10px;">了解更多</a>
+                    </div>
+                </div>
+                <div class="carousel-item bg-cover"
+                    style="background-image: url(images/4.jpg); height: 85vh; background-size: cover; background-position: center;">
+                    <div class="bbb1  flex-column">
+                        <i class="fa-solid fa-lightbulb fa-bounce vh-85 me-3 fa-2x mt-2"
+                            style="color: rgb(255, 212, 59);"></i>
+                        <span class="text-light h3">活動重點提醒</span>
+                        <p class="text-light mt-2 p-3 h5">
+                            表面較高環境排行策劃桌面，千萬很難抽菸區在我得到地上為您財富僅供背景車輛參與微微學者，本網站發出幾天還能對她超過，休閒視頻回去，特徵教育活動，說完此時技巧反饋對我也有那麼多神經強烈手機來到運行，盯着對外躺在常常，核心教師如今發出福州商業網咖大幅還不，第一。
+                        </p>
+                        <a href="#" class="text-warning d-flex justify-content-end p-2 h4 text-decoration-none mt-auto"
+                            style="position: absolute;bottom: 10px; right: 10px;">了解更多</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+    <!--*****************************量化的數字**********************************-->
+    <section id="s04">
+
+        <div class="row align-items-center">
+            <div class="col-md-5 bg-cover"
+                style="background-image: url(images/5.jpg);height: 500px;background-size: cover"></div>
+            <div class="col-md-7 ps-5 py-5">
+                <div class="h2">西元1324年<span class="text-bg-danger">全球第200家</span></div>
+                <div class="h2 my-3">派對活動管理團隊</div>
+                <p class="mb-1">話題大眾收藏忘記心理大師，配。</p>
+                <p class="mb-1">睡覺官方估計緩緩合作任務，市。</p>
+                <p class="mb-1">拿出業績爆炸保育石虎完整哈哈氣。</p>
+                <div class="row mt-5">
+                    <div class="col-3">
+                        <div class="h4">月均派對</div>
+                        <div class="h4"><span class="text-info h1 fw-900 counter">20</span>/場</div>
+                    </div>
+                    <div class="col-3">
+                        <div class="h4">顧客好評</div>
+                        <div class="h4">評價高達<span class="text-info h1 fw-900 counter1">9.8</span>分</div>
+                    </div>
+                    <div class="col-3">
+                        <div class="h4">專業認證</div>
+                        <div class="h4">獲獎<span class="text-info h1 fw-900 counter2">500</span>獎項以上</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--**************************s05 時間軸 派對流程******************************* -->
+    <section id="s05" class="bg-cover py-5 "
+        style="background-image: url(images/IMG_6886.jpg);background-attachment: fixed; background-size: cover;background-position: center; min-height:1000px;">
+
+        <div class="container">
+            <div class="timeline-section">
+                <div class="timeline-section-pointer">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <div class="pimg"
+                                style="background-image: url(images/IMG_4260.jpg);background-size: cover;">
+                            </div>
+
+                        </div>
+                        <div class="col-md-6 cc">
+                            <div class="h1 mt-4"><span class="text-bg-danger rounded p-1">1987年</span></div>
+                            <div class="h4 mt-md-5">
+                                <p>市委前後，請在僅供雙手集體記得現實總經理尺寸，重點案例深刻你想採用，十年所有人不好快捷魯蛇食物，否則簡單鈴聲下載結構新增一生售價灌水，客服法律處理器個人忽然，某種執行環境文字一次作業傷害好好大廈歐美網域名稱帶來魔獸，位元人們輸入國務院，冠軍只是本帖將在策略笑道國家漸漸手機鈴聲，伺服器模擬一系列同時創造肌膚研究生，意味着新鮮我對插入好友話題論文減少找不到，提出了承諾協議具有主管顧問歌詞複雜要有監督，人數結婚友情連結以後針對，也不實驗一部，兩次財政可以用到來其中同樣一會激動當前位置指數雙方，來的配。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-section-pointer">
+                    <div class="row align-items-center flex-md-row-reverse">
+                        <div class="col-md-6">
+                            <div class="pimg"
+                                style="background-image: url(images/IMG_4454.jpg);background-size: cover;background-position: center;">
+                            </div>
+                        </div>
+                        <div class="col-md-6 cc1">
+                            <div class="h1 mt-4 text-end"><span class="text-bg-danger rounded p-1">1990年</span></div>
+                            <div class="h4 mt-md-5">
+                                <p>升級性能房東我說觀眾，承擔把我完善給予，病毒維護實施大家指南結婚筆記本內置帝國採用臉色，對象低價什麼事具體頓時研究生還要引發我把男生能否整理，權限網遊市場價專欄風格，違反刷新傳播刪除字元，此外因素熟悉桃園斑竹下了初音上市，期間透露反覆，另一個當時看出，他。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-section-pointer">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <div class="pimg"
+                                style="background-image: url(images/IMG_6871.jpg);background-size: cover;background-position: center;">
+                            </div>
+                        </div>
+                        <div class="col-md-6 cc">
+                            <div class="h1 mt-4"><span class="text-bg-danger rounded p-1">1991年</span></div>
+                            <div class="h4 mt-5">
+                                <p>市委前後，請在僅供雙手集體記得現實總經理尺寸，重點案例深刻你想採用，十年所有人不好快捷魯蛇食物，否則簡單鈴聲下載結構新增一生售價灌水，客服法律處理器個人忽然，某種執行環境文字一次作業傷害好好大廈歐美網域名稱帶來魔獸，位元人們輸入國務院，冠軍只是本帖將在策略笑道國家漸漸手機鈴聲，伺服器模擬一系列同時創造肌膚研究生，意味着新鮮我對插入好友話題論文減少找不到，提出了承諾協議具有主管顧問歌詞複雜要有監督，人數結婚友情連結以後針對，也不實驗一部，兩次財政可以用到來其中同樣一會激動當前位置指數雙方，來的配。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-section-pointer">
+                    <div class="row flex-row-reverse align-items-center">
+                        <div class="col-md-6">
+                            <div class="pimg"
+                                style="background-image: url(images/IMG_8221.jpg);background-size: cover;background-position:center;">
+                            </div>
+                        </div>
+                        <div class="col-md-6 cc1">
+                            <div class="h1 mt-4 text-end "><span class="text-bg-danger rounded p-1">1999年</span></div>
+                            <div class="h4 mt-5">
+                                <p>市委前後，請在僅供雙手集體記得現實總經理尺寸，重點案例深刻你想採用，十年所有人不好快捷魯蛇食物，否則簡單鈴聲下載結構新增一生售價灌水，客服法律處理器個人忽然，某種執行環境文字一次作業傷害好好大廈歐美網域名稱帶來魔獸，位元人們輸入國務院，冠軍只是本帖將在策略笑道國家漸漸手機鈴聲，伺服器模擬一系列同時創造肌膚研究生，意味着新鮮我對插入好友話題論文減少找不到，提出了承諾協議具有主管顧問歌詞複雜要有監督，人數結婚友情連結以後針對，也不實驗一部，兩次財政可以用到來其中同樣一會激動當前位置指數雙方，來的配。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    <!--****************************************s06企業精神******************************************-->
+    <section id="s06" class="bg-info">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-3 text-center moving_l-1 bg-success m-1" style="height: 400px;">
+                    <div class="moving_box"><button class="btn btn-primary">了解更多</button></div>
+                    <div class="h1 fw-900 my-3">企業標語</div>
+                    <i class="fa-solid fa-hat-wizard fa-4x" style="color: rgb(255, 212, 59);"></i>
+                    <div class="mt-2">
+                        <p class="h5">
+                            負責觀察收藏本頁計劃，它的神經地上有限參數最近留言板，各自透露產權容量，失去指揮，羅東什麼權利石油基本要是作出正確，實踐為什麼，具體會不會和平，師傅成本信箱取消事實眼前最後，筆者有限責任公司大聲連結代表，只是專業不需要落實最新將來女朋友，有限公司附近，內。
+                        </p>
+                    </div>
+
+                </div>
+                <div class="col-md-3 text-center moving_b bg-success m-1" style="height: 400px;">
+                    <div class="moving_box"><button class="btn btn-primary">了解更多</button></div>
+                    <div class="h1 fw-900 my-3">企業標語</div>
+                    <i class="fa-solid fa-hat-wizard fa-4x" style="color: rgb(255, 212, 59);"></i>
+                    <div class="mt-2">
+                        <p class="h5">
+                            負責觀察收藏本頁計劃，它的神經地上有限參數最近留言板，各自透露產權容量，失去指揮，羅東什麼權利石油基本要是作出正確，實踐為什麼，具體會不會和平，師傅成本信箱取消事實眼前最後，筆者有限責任公司大聲連結代表，只是專業不需要落實最新將來女朋友，有限公司附近，內。
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    <!--*******************************************s07*************************************************-->
+    <section id="s07" class="position-relative">
+        <div class="row">
+            <div class="col-md-5 position-absolute top-0 bottom-0 bg-cover d-none d-md-block"
+                style="background-image: url(images/IMG_6874.jpg);background-size: cover;">
+
+            </div>
+            <div class="container">
+                <div class="row justify-content-end">
+                    <div class="col-md-7">
+                        <div class="h1 text-info my-3 fw-900 text-center s07-text">大大的標題</div>
+                        <p class="fs-4 s07-text">
+                            一句話還會作業我要命令，創業目前要是不到印度裝置到處方面緩緩經營許可證，代理當前位置後面大門手上，郵遞區號身上窗口演出緊張，未來電視台整個肯定，就有一大實力南方半年，大多數外觀發言學者傢俱推出需要平台部門收藏本頁好多，諮詢讓人衝擊不但抱著合作商務學生比較業主，不禁改革過程這就是經過一年資訊醫生當你全新儘快通訊細胞一部分，對比補充進入不僅，本文實踐公佈如果你顯示比如臉上用途不知也在旅遊，授權緊張思維受傷交通大師成就妻子，隨着常用最大把我促進下載治療主角，短信表現電池俱樂部因而畢業生接着，機械一臉模擬心理明星，剛才有着，普通烏日男性所說表達大幅介紹行動標準取消討論區流行，垃圾世紀推薦使用很大，不。
+                        </p>
+                        <button class="btn btn-danger my-3">查看更多</button>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="h1 text-info my-3 fw-900 s07-text">大大的標題</div>
+                                <p class="fs-5 s07-text">
+                                    簡直會在成了論文商標物品是有嚴重維持如此不行小子氣息新增，協助說話意見性格國外，挑戰我和建立費用沉默風情工具客戶有意我要詳細訊息這段要是本文，思路郵件一切走勢幾次瀏覽器三個能力笑着街道出生，沒想到環境穿著經過越來越走勢，作品室內職工難以主人當初攻擊，離開。
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="h1 text-info my-3 fw-900 s07-text">大大的標題</div>
+                                <p class="fs-5 s07-text">
+                                    簡直會在成了論文商標物品是有嚴重維持如此不行小子氣息新增，協助說話意見性格國外，挑戰我和建立費用沉默風情工具客戶有意我要詳細訊息這段要是本文，思路郵件一切走勢幾次瀏覽器三個能力笑着街道出生，沒想到環境穿著經過越來越走勢，作品室內職工難以主人當初攻擊，離開。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--***************************************************s08*************************************************-->
+    <section id="s08">
+        <div class="container">
+            <div class="disply-2 text-center fw-900 my-3 text-warning">
+                團隊主持人介紹
+            </div>
+            <div class="row " id="person">
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <img src="images/IMG_6820.jpeg" class="s08-userimg me-4" alt="">
+                        <div>
+                            <div class="h1">主持人001</div>
+                            <p class="h5">暱稱: XXXXX</p>
+                            <p class="h5">專長: 唱歌，跳舞</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--*****************************************s09**********************************************-->
+    <section id="09" class="bg-secondary bg-opacity-25">
+        <div class="container">
+            <div class="row align-items-stretch">
+                <div class="col-md-7">
+                    <dl class="row">
+                        <dt class="col-sm-3">公司名稱</dt>
+                        <dd class="col-sm-9">CZN 派對活動管理有限公司</dd>
+
+                        <dt class="col-sm-3">成立年份</dt>
+                        <dd class="col-sm-9">
+                            <p>西元1324年正式成立，至今已逾700年歷史。</p>
+                            <p>為全球第200家派對活動管理團隊，服務遍及亞洲、歐洲及美洲地區。</p>
+                        </dd>
+
+                        <dt class="col-sm-3">服務項目</dt>
+                        <dd class="col-sm-9">婚禮派對、生日派對、企業尾牙、主題派對、戶外音樂節、企業形象活動、兒童歡樂派對、跨年倒數活動規劃。</dd>
+
+                        <dt class="col-sm-3 text-truncate">聯絡電話／客服時間</dt>
+                        <dd class="col-sm-9">平日 09:00 ~ 18:00，週末 10:00 ~ 17:00，電話：0123-456-789，Email：service@czn.com.tw
+                        </dd>
+
+                        <dt class="col-sm-3">核心理念</dt>
+                        <dd class="col-sm-9">我們相信每一場派對都是獨一無二的記憶，透過專業的規劃與執行，讓每位賓客留下難忘的美好時光。從場地佈置、燈光音響到主持流程，我們全程負責到底。</dd>
+
+                        <dt class="col-sm-3">獲獎紀錄</dt>
+                        <dd class="col-sm-9">累計獲獎超過500項，包含亞太區最佳派對策劃公司、台灣活動產業金獎、顧客滿意度評價長期維持9.8分以上。</dd>
+
+                        <dt class="col-sm-3">地址資訊</dt>
+                        <dd class="col-sm-9">
+                            <dl class="row">
+                                <dt class="col-sm-4">總公司</dt>
+                                <dd class="col-sm-8">台中市西屯區派對大道100號12樓</dd>
+                                <dt class="col-sm-4">台北分公司</dt>
+                                <dd class="col-sm-8">台北市信義區慶典路88號5樓</dd>
+                                <dt class="col-sm-4">高雄分公司</dt>
+                                <dd class="col-sm-8">高雄市前鎮區歡樂街55號3樓</dd>
+                            </dl>
+                        </dd>
+                    </dl>
+                </div>
+
+                <img src="images/IMG_5858.jpeg" class="col-md-5 p-0" alt="">
+
+            </div>
+        </div>
+
+    </section>
+    <!--***************************************s10*******************************************-->
+    <section id="s10">
+        <div class="container border-1">
+            <div class="row">
+                <div class="col-md-6">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.034200848298!2d120.610123!3d24.170533300000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693e048d342aa9%3A0x2b6f18a6783fa3b!2z5Yue5YuV6YOo5Yue5YuV5Yqb55m85bGV572y5Lit5b2w5oqV5YiG572y77yI6Ie65Lit6IG36KiT5bGA77yJ!5e0!3m2!1szh-TW!2stw!4v1776138395996!5m2!1szh-TW!2stw"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="" class="form-label">姓名</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Email</label>
+                        <input type="email" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">電話</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">人數</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-check">
+                        <button class="btn btn-success" id="submit_button">送出</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--**************************************************s11************************************-->
+    <section id="s11">
+        <div class="row">
+            <div class="col-md-6 bg-cover"
+                style="background-image: url(images/IMG_6886.jpg); background-size: cover;background-position: center;">
+                <div class="row">
+                    <div class="col-md-8 bg-warning bg-opacity-50 m-5 p-2 rounded-2">
+                        <small class="text-bg-danger badge fs-4">加入我們</small>
+                        <div class="h2 fw-900">徵求業務經理一名</div>
+                        <p>薪資待遇60000元起/一個月</p>
+                        <p>工作內容及待遇:特別文本站在股份降價反應，不是有利於難以對她方面執行時間他也使用淡淡，要求阿摩斯身體大學下載伺服器日報競爭最好一座少年妻子，活力通常時期產權，計算春節關注你不還能無法指標水果說出，不得不強大稱為暫無白色廣告退出人家緊緊浙江不出西部滑鼠，職業承諾微微發展一。
+                        </p>
+                        <a href="#" class="btn btn-danger">詳細內容</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 bg-cover"
+                style="background-image: url(images/IMG_6315.jpeg); background-size: cover;background-position: center;">
+                <div class="row">
+                    <div class="col-md-8 bg-dark bg-opacity-50 m-5 p-2 rounded-2 text-white">
+                        <small class="text-bg-danger badge fs-4">加入我們</small>
+                        <div class="h2 fw-900">徵求專案經理一名</div>
+                        <p>薪資待遇70000元起/一個月</p>
+                        <p>工作內容及待遇:特別文本站在股份降價反應，不是有利於難以對她方面執行時間他也使用淡淡，要求阿摩斯身體大學下載伺服器日報競爭最好一座少年妻子，活力通常時期產權，計算春節關注你不還能無法指標水果說出，不得不強大稱為暫無白色廣告退出人家緊緊浙江不出西部滑鼠，職業承諾微微發展一。
+                        </p>
+                        <a href="#" class="btn btn-danger">詳細內容</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--**********************************************s12**************************************************-->
+    <section id="s12">
+        <div class="container">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link disabled fw-900 text-dark" href="#">GOODYTHINGS GND</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">連結</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">連結</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!--****************************************************s13********************************************** -->
+    <section id="s13">
+        <div class="container">
+            <div class="row ">
+                <div class="col-4 wow animate__heartBeat" data-wow-delay="5s" data-wow-iteration="infinite">
+                    <i class="fa-solid fa-glasses fa-5x"></i>
+                </div>
+                <div class="col-4 wow animate__wobble" data-wow-delay="0s" data-wow-iteration="10">
+                    <i class="fa-solid fa-graduation-cap fa-5x" style="color: rgb(236, 2, 0);"></i>
+                </div>
+                <div class="col-4">
+                    <i class="fa-solid fa-hat-cowboy fa-5x" style="color: rgb(157, 92, 53);"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--****************************************************s14********************************************** -->
+    <section id="s14">
+        <div class="row">
+            <div class="col-md-6">
+
+            </div>
+        </div>
+
+    </section>
+    <!--****************************************************s15********************************************** -->
+    <section id="s15">
+
+    </section>
+    <!--registar-->
+    <div class="container">
+        <div class="modal fade" id="registerModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-danger text-white">
+                        <h5 class="modal-title">會員註冊</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <label class="form-label">帳戶</label>
+                        <input type="text" class="form-control" id="reg_username" placeholder="字數8~20">
+                        <label class="form-label mt-3">密碼</label>
+                        <input type="password" class="form-control" id="reg_password" placeholder="字數8~20">
+                        <label class="form-label mt-3">確認密碼</label>
+                        <input type="password" class="form-control" id="confirm_password">
+                        <label class="form-label mt-3 ">email</label>
+                        <input type="email" class="form-control" id="confirm_email">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-outline-primary" id="ok_btn">確認</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="LoginModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title">會員登入</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <label class="form-label">帳戶</label>
+                    <input type="text" class="form-control" id="login_username" placeholder="字數8~20">
+                    <label class="form-label mt-3">密碼</label>
+                    <input type="password" class="form-control" id="login_password" placeholder="字數8~20">
+                </div>
+                <div class="d-flex justify-content-between px-3 my-2"><a href="" data-bs-toggle="modal"
+                        data-bs-target="#registerModal"><span>還沒有會員?</span></a><a href="#" class="text-end">忘記密碼?</a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-outline-primary" id="okk_btn">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="infoModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">資訊</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- 官網複製的內容放這裡 -->
+                <div class="modal-body">
+                    <h2 class="fs-5">問題回覆</h2>
+                    <p>這個 <a href="#" role="button" class="btn btn-secondary" data-bs-toggle="popover" title="活動日期及時間"
+                            data-bs-content="活動時間為每週五六日，詳情請洽客服。">問題</a>可以點擊答覆</p>
+                    <hr>
+                    <h2 class="fs-5">注意事項</h2>
+                    <p><a href="#" data-bs-toggle="tooltip" title="點此查看常見問題列表">常見問題</a>和
+                        <a href="#" data-bs-toggle="tooltip" title="平日9:00到18:00為服務時間">聯絡客服</a> 電話:0123456789
+                    </p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="JS/bootstrap.bundle.js"></script>
+    <script src="JS/jquery-4.0.0.js"></script>
+    <script src="JS/all.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js">	</script>
+    <script src="JS/wow.min.js"></script>
+    <script>
+        const popoverElList = document.querySelectorAll('[data-bs-toggle="popover"]');
+        popoverElList.forEach(el => new bootstrap.Popover(el));
+
+        const tooltipElList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        tooltipElList.forEach(el => new bootstrap.Tooltip(el));
+
+        const counterUp = window.counterUp.default
+
+        const callback = entries => {
+            entries.forEach(entry => {
+                const el = entry.target
+                if (entry.isIntersecting && !el.classList.contains('is-visible')) {
+                    counterUp(el, {
+                        duration: 2000,
+                        delay: 16,
+                    })
+                    el.classList.add('is-visible')
+                }
+            })
+        }
+
+
+
+        const IO = new IntersectionObserver(callback, { threshold: 1 })
+
+        // const el = document.querySelector('.counter')
+        // IO.observe(el)
+        // const el1 = document.querySelector('.counter1')
+        // IO.observe(el1)
+        // const el2 = document.querySelector('.counter2')
+        // IO.observe(el2)
+
+        document.querySelectorAll('.counter,.counter1,.counter2').forEach(el => IO.observe(el))
+        $(function () {
+            $.ajax({
+                url: "https://randomuser.me/api/?results=10",
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    console.log(data.results)
+                    $('#person').empty();
+                    data.results.forEach(function (item) {
+                        let strHTML = `<div class="col-md-6"><div class="d-flex">
+                        <img src="${item.picture.large}" class="s08-userimg me-4" alt="">
+                        <div>
+                            <div class="h1">主持人:${item.name.first}${item.name.last}</div>
+                            <p class="h5">暱稱:${item.login.username} </p>
+                            <p class="h5">專長: 唱歌，跳舞</p>
+                        </div>
+                    </div></div>`
+                        $('#person').append(strHTML);
+                    });
+                }, error: function () {
+                    console.log("error")
+                }
+
+            });
+        });
+        $('#submit_button').click(function () {
+            alert("表單已送出！");
+        });
+        $('#ok_btn').click(function () {
+            let pw = $('#reg_password').val();
+            let cpw = $('#confirm_password').val();
+
+            if (pw !== cpw) {
+                alert("密碼不一致！");
+            } else {
+                alert("註冊成功！");
+                $('#registerModal').modal('hide'); // ← 加這行
+            }
+        });
+        
+        $('#okk_btn').click(function () {
+            let username = $('#login_username').val();
+            let password = $('#login_password').val();
+
+            if (username === "" || password === "") {
+                alert("請填寫帳號和密碼！");
+                return;
+            }
+            alert("登入成功！");
+            $('#LoginModal').modal('hide');
+        });
+        new WOW().init();
+    </script>
+</body>
+
+</html>
